@@ -1,0 +1,90 @@
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 40px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+    color: #FFF;
+
+}
+
+h1 .divider {
+	margin: 0 8px;
+}
+
+h1 .sub-headline {
+	color: rgba(253, 211, 253, 0.1);
+	font-weight: 300;
+}
+.quote {
+    border-left: white 1px;
+
+}
+.overlay {
+    position: absolute;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    /**text, adjust as req'd**/
+    padding-left: 5%;
+    color: #FFF;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px; /**some fallback value**/
+    font-size: 5.4vw; /**responsive size**/
+}
+
+/* Centered texts in each section
+            * --------------------------------------- */
+.section{
+    text-align:center;
+    overflow: hidden;
+}
+
+#myVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-color: black; /* in case the video doesn't fit the whole page*/
+    background-image: /* our video */;
+    background-position: center center;
+    background-size: contain;
+    object-fit: cover; /*cover video background */
+    z-index:3;
+}
+
+
+
+/* Layer with position absolute in order to have it over the video
+* --------------------------------------- */
+#section0 .layer{
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    left: 0;
+    top: 43%;
+}
+
+/*solves problem with overflowing video in Mac with Chrome */
+#section0{
+    overflow: hidden;
+}
+
+
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu li a {
+    color: #fff;
+}
