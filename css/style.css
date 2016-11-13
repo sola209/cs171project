@@ -1,7 +1,7 @@
 
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 h1 {
@@ -39,11 +39,52 @@ h1 .sub-headline {
     font-size: 5.4vw; /**responsive size**/
 }
 
+/* Tree Layout */
+
+#tree {
+    text-align: center;
+
+}
+
+.node circle {
+    stroke: #a06965;
+    stroke-width: 5px;
+    fill: #a06965;
+}
+
+.node text {
+    font-size: 18px;
+    font-family: Helvetica;
+    font-weight: lighter;
+    fill: white;
+
+}
+
+
+.link {
+    fill: none;
+    stroke: rgba(163, 163, 163, 0.5);
+    stroke-width: 5px;
+}
+.tree-caption {
+    text-align: center;
+
+}
+
 /* Centered texts in each section
             * --------------------------------------- */
-.section{
+.section2{
     text-align:center;
     overflow: hidden;
+    font-size : 150px;
+    font-style: oblique;
+    color : rgb(51, 51, 51);
+
+}
+
+text{
+    font-family: "Gotham SSm";
+
 }
 
 #myVideo{
@@ -56,14 +97,25 @@ h1 .sub-headline {
     height: 100%;
     background-size: 100% 100%;
     background-color: black; /* in case the video doesn't fit the whole page*/
-    background-image: /* our video */;
     background-position: center center;
     background-size: contain;
     object-fit: cover; /*cover video background */
     z-index:3;
 }
 
+.st0
+{
+    background : #FFFFFF;
+    background : rgba(255, 255, 255, 1);
+    opacity : 0.57;
+    filter: alpha(opacity=57) progid:DXImageTransform.Microsoft.Alpha(opacity=57) ;
 
+}
+
+#section1 text {
+    font-family: 'Helvetica Neue';
+    font-weight: lighter;
+}
 
 /* Layer with position absolute in order to have it over the video
 * --------------------------------------- */
@@ -80,7 +132,16 @@ h1 .sub-headline {
     overflow: hidden;
 }
 
-
+#section1 {
+    background: url("child-labour.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#section2 {
+    /*background: url("child-labour-header.png");*/
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
 
 /* Bottom menu
 * --------------------------------------- */

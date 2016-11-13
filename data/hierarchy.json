@@ -1,0 +1,39 @@
+[
+  {
+  "name": "Human Trafficking",
+  "parent": "null",
+  "children": [
+    {
+      "name": "Labor Trafficking",
+      "parent": "Human Trafficking",
+      "children": [
+        {
+          "name": "Forced Labor",
+          "parent": "Labor Trafficking"
+        },
+        {
+          "name": "Debt Bondage",
+          "parent": "Labor Trafficking"
+        }
+      ]
+    },
+    {
+      "name": "Sexual Exploitation",
+      "parent": "Human Trafficking",
+      "children": [
+        {
+          "name": "Forced Prostitution",
+          "parent": "Sexual Exploitation"
+        },
+        {
+          "name": "Sexual Slavery",
+          "parent": "Sexual Exploitation"
+        }
+      ]
+    },
+    {
+      "name": "Organ Trade",
+      "parent": "Human Trafficking"
+    }
+  ]
+}]
