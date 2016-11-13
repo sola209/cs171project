@@ -136,6 +136,7 @@ text{
     background: url("child-labour.png");
     background-size: 100%;
     background-repeat: no-repeat;
+    opacity: 0.6;
 }
 #section2 {
     /*background: url("child-labour-header.png");*/
@@ -147,4 +148,51 @@ text{
 * --------------------------------------- */
 #infoMenu li a {
     color: #fff;
+}
+
+/* Adapted from https://github.com/Caged/d3-tip/tree/master/examples */
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 12px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(241, 241, 241, 0.9);
+    position: absolute;
+    pointer-events: none;
+}
+
+/* Northward tooltips */
+.d3-tip.n:after {
+    content: "\25BC";
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center;
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+    content: "\25C0";
+    margin: -4px 0 0 0;
+    top: 50%;
+    left: -8px;
+}
+
+/* Southward tooltips */
+.d3-tip.s:after {
+    content: "\25B2";
+    margin: 0 0 1px 0;
+    top: -8px;
+    left: 0;
+    text-align: center;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+    content: "\25B6";
+    margin: -4px 0 0 -1px;
+    top: 50%;
+    left: 100%;
 }

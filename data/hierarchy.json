@@ -1,38 +1,46 @@
 [
   {
   "name": "Human Trafficking",
+    "description": "Test",
   "parent": "null",
   "children": [
     {
       "name": "Labor Trafficking",
+      "description": "Test",
       "parent": "Human Trafficking",
       "children": [
         {
           "name": "Forced Labor",
+          "description": "Occurs mainly in developing countries. Victims are recruited and trafficked using deception and coercion and find themselves held in conditions of slavery in a variety of jobs.",
           "parent": "Labor Trafficking"
         },
         {
           "name": "Debt Bondage",
+          "description": "Test",
           "parent": "Labor Trafficking"
         }
       ]
     },
     {
       "name": "Sexual Exploitation",
+      "description": "Test",
       "parent": "Human Trafficking",
       "children": [
         {
           "name": "Forced Prostitution",
+          "description": "Test",
           "parent": "Sexual Exploitation"
         },
         {
           "name": "Sexual Slavery",
+          "description": "Test",
           "parent": "Sexual Exploitation"
         }
       ]
     },
     {
       "name": "Organ Trade",
+      "description": "Trafficking of humans for the purpose of using their organs, in particular kidneys.",
       "parent": "Human Trafficking"
     }
   ]
