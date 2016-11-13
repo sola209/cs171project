@@ -61,7 +61,7 @@ function ready(error, world, intro) {
                     r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
                 return function(t) {
                     projection.rotate(r(t));
-                    c.clearRect(0, 0, width, height);
+                    c.clearRect(0, 0, width, 2*height);
                     c.fillStyle = "#ccc", c.beginPath(), path(land), c.fill();
                     c.fillStyle = "#f00", c.beginPath(), path(names[i].geoData), c.fill();
                     c.strokeStyle = "#fff", c.lineWidth = .5, c.beginPath(), path(borders), c.stroke();
