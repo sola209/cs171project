@@ -1,27 +1,15 @@
+queue()
+    .defer(d3.json, "data/world-110m.json")
+    .defer(d3.json, "data/globeSpin.json")
+    .defer(d3.csv, "data/trafficking.csv")
+    .defer(d3.json, "data/hierarchy.json")
+    .await(ready);
 
-var allData = [];
+function ready(error, world, globeData, gsi, hierarchy) {
+    if (error) throw error;
 
-// Variable for the visualization instance
-var stationMap;
-
-// Start application by loading the data
-loadData();
-
-
-function loadData() {
-
-	// Proxy url
-	var proxy = 'http://michaeloppermann.com/proxy.php?format=xml&url=';
-
-  // Hubway XML station feed
-  var url = 'https://www.thehubway.com/data/stations/bikeStations.xml';
-
-  // TO-DO: LOAD DATA
-}
-
-
-function createVis() {
-
-  // TO-DO: INSTANTIATE VISUALIZATION
+    var globeSpin = new GlobeSpin(world, globeData);
+    var hierarchy = new Hierarchy("tree", hierarchy);
+    var slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
 
 }

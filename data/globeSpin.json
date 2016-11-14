@@ -1,0 +1,40 @@
+{
+  "countryQuotes": [
+    {
+      "id": 840,
+      "name": "United States",
+      "quote": "Each year, at least 14,500 people are trafficked into the U.S. and forced into slavery.",
+      "image": "img\\general.jpg"
+    },
+    {
+      "id": 384,
+      "name": "Cote d'Ivoire",
+      "quote": "In 1860, slaves cost today's equivalent of $40,000.  Today they cost on average $90.",
+      "image": "img\\ivorycoast.jpg"
+    },
+    {
+      "id": 356,
+      "name": "India",
+      "quote": "Millions of bonded labor slaves from the \"Dalit\" class are saddled with bogus debts they can never work off.",
+      "image": "img\\india.jpg"
+    },
+    {
+      "id": 643,
+      "name": "Russia Federation",
+      "quote": "Russia has the largest incidence of slavery in Europe.  Forced labour and commercial sex exploitation are the most common forms here. ",
+      "image": "img\\russia.jpg"
+    },
+    {
+      "id": 360,
+      "name": "Indonesia",
+      "quote": "In 2015, The Indonesian government rescued more than 2,000 men off a remote island village of Benjina; some of these men had been at sea for years, and they had been held captive on fishing boats as unpaid slave labor.",
+      "image": "img\\indonesia.jpg"
+    },
+    {
+      "id": 466,
+      "name": "Mali",
+      "quote": "\"When people eat chocolate, they are eating my flesh.\" - Mali Chocolate Farm Slave",
+      "image": "img\\mali.jpg"
+    }
+  ]
+}

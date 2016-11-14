@@ -4,6 +4,23 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
+h5{
+   margin-top: 50px;
+   font-size: 40px;
+}
+
+h6 {
+   font-size: 18px;
+   margin-left: 50px;
+   margin-right: 50px;
+   margin-bottom: 20px;
+
+}
+
+#globeImage {
+   margin-top: 20px;
+}
+
 h1 {
   font-weight: 100;
   font-size: 40px;
