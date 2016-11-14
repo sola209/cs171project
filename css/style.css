@@ -64,9 +64,9 @@ h1 .sub-headline {
 }
 
 .node circle {
-    stroke: #a06965;
-    stroke-width: 5px;
-    fill: #a06965;
+    stroke: white;
+    stroke-width: 2px;
+    fill: rgba(186, 20, 53, 0.96);
 }
 
 .node text {
@@ -153,7 +153,7 @@ text{
     background: url("child-labour.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    opacity: 0.6;
+    opacity: 0.95;
 }
 #section2 {
     /*background: url("child-labour-header.png");*/

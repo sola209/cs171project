@@ -19,7 +19,10 @@ h6, .h6 {
   color: #333;
 }
 
-
+img {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
 /*
  * Override Bootstrap's default container.
  */

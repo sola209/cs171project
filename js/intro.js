@@ -69,9 +69,9 @@ function ready(error, world, intro, gsi, hierarchy) {
                     projection.rotate(r(t));
                     c.clearRect(0, 0, width, 2*height);
                     c.fillStyle = "#ccc", c.beginPath(), path(land), c.fill();
-                    c.fillStyle = "#f00", c.beginPath(), path(names[i].geoData), c.fill();
+                    c.fillStyle = "rgba(186, 20, 53, 0.96)", c.beginPath(), path(names[i].geoData), c.fill();
                     c.strokeStyle = "#fff", c.lineWidth = .5, c.beginPath(), path(borders), c.stroke();
-                    c.strokeStyle = "#000", c.lineWidth = 2, c.beginPath(), path(globe), c.stroke();
+                    c.strokeStyle = "#ccc", c.lineWidth = 2, c.beginPath(), path(globe), c.stroke();
                 };
             })
             .transition()
