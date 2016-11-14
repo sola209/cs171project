@@ -73,9 +73,9 @@ GlobeSpin.prototype.initVis = function() {
                     vis.projection.rotate(vis.r(t));
                     vis.c.clearRect(0, 0, vis.width, vis.height * 2);
                     vis.c.fillStyle = "#ccc", vis.c.beginPath(), vis.path(vis.land), vis.c.fill();
-                    vis.c.fillStyle = "#f00", vis.c.beginPath(), vis.path(vis.names[vis.i].geoData), vis.c.fill();
-                    vis.c.strokeStyle = "#fff", vis.c.lineWidth = .5, vis.c.beginPath(), vis.path(vis.borders), vis.c.stroke();
-                    vis.c.strokeStyle = "#000", vis.c.lineWidth = 2, vis.c.beginPath(), vis.path(vis.globe), vis.c.stroke();
+                    vis.c.fillStyle = "rgba(186, 20, 53, 0.96)", vis.c.beginPath(), vis.path(vis.names[vis.i].geoData), vis.c.fill();
+                    vis.c.strokeStyle = "#000", vis.c.lineWidth = .5, vis.c.beginPath(), vis.path(vis.borders), vis.c.stroke();
+                    vis.c.strokeStyle = "#ccc", vis.c.lineWidth = 2, vis.c.beginPath(), vis.path(vis.globe), vis.c.stroke();
                 };
             })
             .transition()
