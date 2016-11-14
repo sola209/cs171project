@@ -1,7 +1,7 @@
 SlaveryBarChart = function(_parentElement, _data){
 	this.parentElement = _parentElement;
-	this.data = _data;
-	this.displayData = _data;
+	this.data = _data.slice(0);
+	this.displayData = _data.slice(0);
 	this.initVis();
 }
 

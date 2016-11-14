@@ -3,7 +3,7 @@
 
 ScatterChart = function(_parentElement, _data){
     this.parentElement = _parentElement;
-    this.data = _data;
+    this.data = _data.slice(0);
     this.displayData = [];
 
     this.initVis();
@@ -25,8 +25,8 @@ ScatterChart.prototype.initVis = function() {
     vis.svg.call(tip);
 
     // Analyze the dataset in the web console
-    console.log(vis.data);
-    console.log("Countries: " + vis.data.length);
+    // console.log(vis.data);
+    // console.log("Countries: " + vis.data.length);
 
 
     vis.xScale = d3.scale.linear()
@@ -76,11 +76,11 @@ ScatterChart.prototype.wrangleData = function(){
     var vis = this;
 
     vis.data_filtered = vis.data.filter(function (d) {
-        return d["ESTIMATED PROPORTION OF POPULATION IN MODERN SLAVERY"] != "no data" && d["Total score (/100)"] != "no data"
+        return d["EST_POP_SLAVERY"] != "no data" && d["Total score (/100)"] != "no data"
     });
 
     if (d3.select("#attribute-type").property("value") == "Russia_Eurasia") {
-        console.log('hi');
+        // console.log('hi');
         vis.data_filtered = vis.data_filtered.filter(function (d) {
             return d["GEOGRAPHIC_REGION"] == "Russia & Eurasia"
         })
@@ -117,22 +117,25 @@ ScatterChart.prototype.wrangleData = function(){
     }
     ;
 
-    console.log(vis.data.length);
-    console.log(vis.data_filtered.length);
+    // console.log(vis.data.length);
+    // console.log(vis.data_filtered.length);
 
     vis.data_clean = vis.data_filtered.map(function (d) {
-        return [d.Country,
-            +d["ESTIMATED PROPORTION OF POPULATION IN MODERN SLAVERY"],
+        var _d = [d.Country,
+            +d["EST_POP_SLAVERY"],
             +d["Total score (/100)"],
-            +d["POPULATION"].replace(/\,/g, ''),
+            d["POPULATION"],//.replace(/\,/g, ''),
             d["GEOGRAPHIC_REGION"],
             d["GOVERNMENT RESPONSE RANK"]];
+        // console.log(_d);
+        return _d;
     });
 
     vis.data_clean = vis.data_clean.sort(function (a, b) {
         return b[3] - a[3];
     })
 
+    // console.log(vis.data_clean);
     vis.updateVis();
 
 };
@@ -199,18 +202,18 @@ ScatterChart.prototype.updateVis = function() {
     circles.exit().remove();
 
 
-    var legend = vis.svg.selectAll(".legend2").data(vis.data_clean);
+    vis.legend = vis.svg.selectAll(".legend2").data(vis.data_clean);
 
-    legend.enter().append("g").attr("class", "legend2");
+    vis.legend.enter().append("g").attr("class", "legend2");
 
-    legend
+    vis.legend
         .transition()
         .duration(800)
         .attr("transform", "translate(350,100)")
         .style("font-size", "12px")
         .call(d3.legend);
 
-    legend.exit().remove();
+    vis.legend.exit().remove();
 
     tip.html(function (d) {
         return "<font color='red'>Country: </font>" + d[0] + "<br/>" +
