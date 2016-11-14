@@ -11,5 +11,6 @@ function ready(error, world, globeData, gsi, hierarchy) {
     var globeSpin = new GlobeSpin(world, globeData);
     var hierarchy = new Hierarchy("tree", hierarchy);
     var slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
-
+    var scatterchart = new ScatterChart("vis-area", gsi);
+    d3.select("#attribute-type").on("change", scatterchart.wrangleData());
 }
