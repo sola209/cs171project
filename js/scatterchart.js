@@ -210,7 +210,7 @@ ScatterChart.prototype.updateVis = function() {
         .transition()
         .duration(800)
         .attr("transform", "translate(350,100)")
-        .style("font-size", "12px")
+        .style("font-size", "12px");
         .call(d3.legend);
 
     vis.legend.exit().remove();

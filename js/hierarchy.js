@@ -55,8 +55,8 @@ Hierarchy.prototype.updateVis = function(){
     // Initialize
     vis.nodes = vis.tree.nodes(vis.root),
         vis.links = vis.tree.links(vis.nodes);
-    console.log(vis.nodes);
-    console.log(vis.links);
+    // console.log(vis.nodes);
+    // console.log(vis.links);
     // Nodes
     vis.node = vis.svgTree.selectAll("g.node")
         .data(vis.nodes, function (d) {
@@ -66,7 +66,7 @@ Hierarchy.prototype.updateVis = function(){
     vis.nodeEnter = vis.node.enter().append("g")
             .attr("class", "node")
             .attr("transform", function (d) {
-                console.log(d.name)
+                // console.log(d.name)
                 if (d.name == "Organ Trade") {
                     d.x += 60
                 }

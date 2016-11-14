@@ -55,7 +55,7 @@ GlobeSpin.prototype.initVis = function() {
 
 
     vis.n = vis.names.length;
-    console.log(vis.names);
+    // console.log(vis.names);
 
     (function transition() {
         d3.transition()
