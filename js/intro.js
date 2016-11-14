@@ -1,29 +1,35 @@
-
-
-
 var width = 500,
     height = 500;
 
 var countries;
+
 var projection = d3.geo.orthographic()
     .translate([width / 2, height / 2])
     .scale(width / 2 - 20)
     .clipAngle(90)
     .precision(0.6);
+
 var canvas = d3.select("#map-area").append("canvas")
     .attr("width", width)
     .attr("height", height);
+
 var c = canvas.node().getContext("2d");
+
 var path = d3.geo.path()
     .projection(projection)
     .context(c);
+
 var title = d3.select("h5");
 var title2 = d3.select("h6");
+
 queue()
     .defer(d3.json, "data/world-110m.json")
     .defer(d3.json, "data/introData.json")
+    .defer(d3.csv, "data/trafficking.csv")
+    .defer(d3.json, "data/hierarchy.json")
     .await(ready);
-function ready(error, world, intro) {
+
+function ready(error, world, intro, gsi, hierarchy) {
     if (error) throw error;
 
 
@@ -72,6 +78,9 @@ function ready(error, world, intro) {
             .each("end", transition);
 
     })();
+
+    var hierarchy = new Hierarchy("tree", hierarchy);
+    var slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
 
 }
 d3.select(self.frameElement).style("height", height + "px");

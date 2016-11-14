@@ -196,3 +196,7 @@ text{
     top: 50%;
     left: 100%;
 }
+
+#slavery-barchart text {
+    fill: white;
+}
