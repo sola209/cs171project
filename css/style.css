@@ -4,23 +4,31 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-h5{
+#globe-text h5{
    margin-top: 50px;
-   font-size: 40px;
+   font-size: 30px;
+    font-weight: normal;
+
 }
 
-h6 {
+#globe-text h6 {
    font-size: 18px;
-   margin-left: 50px;
-   margin-right: 50px;
+   margin-left: 95px;
+   margin-right: 95px;
    margin-bottom: 20px;
+    font-weight: lighter;
+    text-align: left;
 
 }
 
 #globeImage {
    margin-top: 20px;
+    margin-left: 0;
 }
 
+#globe-area{
+    margin-top: 50px;
+}
 h1 {
   font-weight: 100;
   font-size: 40px;
@@ -65,7 +73,7 @@ h1 .sub-headline {
 
 .node circle {
     stroke: white;
-    stroke-width: 2px;
+    stroke-width: 1px;
     fill: rgba(186, 20, 53, 0.96);
 }
 
