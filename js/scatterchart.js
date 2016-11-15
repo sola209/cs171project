@@ -15,7 +15,7 @@ ScatterChart.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = { top: 40, right: 0, bottom: 60, left: 60 };
+    vis.margin = { top: 40, right: 0, bottom: 90, left: 60 };
     vis.width = 700 - vis.margin.left - vis.margin.right;
     vis.height = 600 - vis.margin.top - vis.margin.bottom;
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -62,7 +62,7 @@ ScatterChart.prototype.initVis = function() {
 
     vis.svg.append("text")
         .attr("text-anchor", "middle")
-        .attr("transform", "translate(350,544)")  // centre below axis
+        .attr("transform", "translate(350,565)")  // centre below axis
         .text("% of Population in Modern Slavery");
 
     vis.svg.call(tip);
@@ -171,7 +171,12 @@ ScatterChart.prototype.updateVis = function() {
         .duration(800)
         .attr("class","barxaxis")
         .attr("transform", "translate(0," + vis.height + ")")
-        .call(vis.xAxis);
+        .call(vis.xAxis)
+        .selectAll("text")
+        .attr("y", 20)
+        .attr("x", 9)
+        .attr("dy", ".35em")
+        .attr("transform", "translate(0, 27)rotate(90)");
 
     xaxis_page.exit().remove();
 
@@ -211,7 +216,7 @@ ScatterChart.prototype.updateVis = function() {
         .duration(800)
         .attr("transform", "translate(350,100)")
         .style("font-size", "12px");
-        .call(d3.legend);
+        // .call(d3.legend);
 
     vis.legend.exit().remove();
 
