@@ -141,22 +141,22 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.append("pattern")
 		.attr("id", "bg")
 		.attr('patternUnits', 'userSpaceOnUse')
-		.attr('width', vis.y.rangeBand()-9)
+		.attr('width', vis.y.rangeBand()-1)
 		.attr('height', vis.y.rangeBand()+8)
 		.append("image")
 		.attr("xlink:href", "img/stick-figure.png")
-		.attr('width', vis.y.rangeBand()-9)
+		.attr('width', vis.y.rangeBand()-1)
 		.attr('height', vis.y.rangeBand()+8);
 
 	vis.svg.append("defs")
 		.append("pattern")
 		.attr("id", "bg2")
 		.attr('patternUnits', 'userSpaceOnUse')
-		.attr('width', vis.y.rangeBand()-9)
+		.attr('width', vis.y.rangeBand()-1)
 		.attr('height', vis.y.rangeBand()+8)
 		.append("image")
 		.attr("xlink:href", "img/stick-figure-blue.png")
-		.attr('width', vis.y.rangeBand()-9)
+		.attr('width', vis.y.rangeBand()-1)
 		.attr('height', vis.y.rangeBand()+8);
 
 

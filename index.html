@@ -19,6 +19,8 @@
   <link href="css/cover.css" rel="stylesheet">
 
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/loader-style.css" rel="stylesheet">
+
 
   <script src="js/jquery.min.js"></script>
 
@@ -47,15 +49,28 @@
 
 
 <div id="fullpage">
-  <div class="section " id="section0">
-    <video autoplay loop muted id="myVideo">
-      <source src="img/slavery_1080.webm" type="video/webm">
-    </video>
-    <div class="layer overlay">
-      The Invisible Crime
-      <h1>An interactive exploration into the world of human trafficking</h1>
+  <!-- <div class="section" id="section-loader"> -->
+
+  <!-- </div> -->
+
+    <div class="section" id="section0">
+
+    <div id="loader-wrapper">
+      
+      <div id="loader"></div>      
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    
     </div>
-  </div>
+
+        <video autoplay loop muted id="myVideo">
+          <source src="img/slavery_1080.webm" type="video/webm">
+        </video>
+        <div class="layer overlay">
+          The Invisible Crime
+          <h1>An interactive exploration into the world of human trafficking</h1>
+        </div>
+      </div>
 
   <div class="section" id="section1">
     <svg id="svgOne" width="100%" height="100%">
