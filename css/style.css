@@ -4,23 +4,31 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-h5{
+#globe-text h5{
    margin-top: 50px;
-   font-size: 40px;
+   font-size: 30px;
+    font-weight: normal;
+
 }
 
-h6 {
+#globe-text h6 {
    font-size: 18px;
-   margin-left: 50px;
-   margin-right: 50px;
+   margin-left: 95px;
+   margin-right: 95px;
    margin-bottom: 20px;
+    font-weight: lighter;
+    text-align: left;
 
 }
 
 #globeImage {
    margin-top: 20px;
+    margin-left: 0;
 }
 
+#globe-area{
+    margin-top: 50px;
+}
 h1 {
   font-weight: 100;
   font-size: 40px;
@@ -64,9 +72,9 @@ h1 .sub-headline {
 }
 
 .node circle {
-    stroke: #a06965;
-    stroke-width: 5px;
-    fill: #a06965;
+    stroke: white;
+    stroke-width: 1px;
+    fill: rgba(186, 20, 53, 0.96);
 }
 
 .node text {
@@ -153,7 +161,7 @@ text{
     background: url("child-labour.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    opacity: 0.6;
+    opacity: 0.95;
 }
 #section2 {
     /*background: url("child-labour-header.png");*/
@@ -216,4 +224,8 @@ text{
 
 #slavery-barchart text {
     fill: white;
+}
+
+#vis-area text {
+    fill:white;
 }
