@@ -10,7 +10,7 @@ FlowMap = function(_parentElement, _data){
     this.flows = _data[2];
     this.displayFlows =_data[2];
     console.log(this.displayFlows)
-    this.selection = "All";
+    this.selection = "None";
     this.initVis();
 }
 
@@ -140,7 +140,7 @@ FlowMap.prototype.updateVis = function(){
 
             vis.displayFlows.forEach(function(flow) {
                // console.log(vis.selection);
-
+               // console.log([flow.Origin, flow.Dest]);
                 if (vis.selection=="All"||flow.Origin==vis.selection||flow.Dest==vis.selection){
                     console.log(vis.selection);
                 var o = nodeDataByCode[flow.Origin], co = o.coords, po = o.projection;
@@ -215,11 +215,11 @@ FlowMap.prototype.updateVis = function(){
                 .attr("orient", "auto")
                 //.attr("markerUnits", "strokeWidth")
                 .attr("markerUnits", "userSpaceOnUse")
-                .attr("markerWidth", 4*4)
-                .attr("markerHeight", 3*4)
+                .attr("markerWidth", 4*6)
+                .attr("markerHeight", 3*6)
                 .append("polyline")
                 .attr("points", "2,0 13,5 2,10 3,5")
-                .attr("fill", 'white')
+                .attr("fill", '#919191')
             //.attr("opacity", 0.5)
             ;
 
@@ -264,7 +264,6 @@ FlowMap.prototype.updateVis = function(){
                 //.attr("stroke", strokeFun)
                 .attr("stroke-linecap", "round")
                 .attr("stroke-width", function(d) { return arcWidth(d.magnitude); })
-                    .transition()
                 .attr("d", function(d) {
                     if (vis.useGreatCircles)
                         return splitPath(vis.path(vis.arc(d)));

@@ -122,7 +122,7 @@ Hierarchy.prototype.updateVis = function(){
 }
 Hierarchy.prototype.blink = function() {
     for (i = 0; i != 30; i++) {
-        $('.ring').fadeTo(1500, 0.1).fadeTo(1500, 5.0);
+        $('.ring').fadeTo(500, 0.1).fadeTo(1500, 5.0);
 
     }
 }
