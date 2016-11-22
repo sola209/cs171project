@@ -18,15 +18,24 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
     var scatterchart = new ScatterChart("vis-area", gsi);
     d3.select("#attribute-type").on("change", scatterchart.wrangleData());
     var flowMap = new FlowMap("#flow", [world, nodes, flows]);
+    var countryInfo =
     // Update the visualization
     $( '.flow-select' ).mouseenter( function(){
         flowMap.wrangleData(this.id)} );
 
     $(".flow-select").click(function(){
-        if ( $(this).height() == 50)
-            $( this ).animate({ height: "+=20" }, 200 );
+        var current = this;
+        $('.flow-select').each(function() {
+            if ( $(this).height() > 60)
+                $( this ).animate({ height: "-=90" },  { duration: 200, queue: false });
+                $( this ).html(""+this.id);
+        });
+        if ( $(this).height() < 60){
+            $( this ).animate({height: "+=90"},  { duration: 200, queue: false } );
+            $( this ).html("More information for you about "+this.id);}
         else
-            $( this ).animate({ height: "-=20" }, 200 );
+        {$( this ).animate({ height: "-=90" },  { duration: 200, queue: false });
+            $( this ).html(""+this.id)};
     });
 }
 

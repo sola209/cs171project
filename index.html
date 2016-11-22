@@ -32,7 +32,7 @@
         afterRender: function(){
 
           //playing the video
-          $('video').get(0).play();
+          $("#myVideo").get(0).play();
 
         }
       });
@@ -50,7 +50,7 @@
 
 <div id="fullpage">
   <div class="section " id="section0">
-    <video autoplay loop muted id="MyVideo">
+    <video autoplay loop muted id="myVideo">
       <source src="img/slavery_1080.webm" type="video/webm">
     </video>
     <div class="layer overlay">
@@ -58,7 +58,6 @@
       <h1>An interactive exploration into the world of human trafficking</h1>
     </div>
   </div>
-
   <div class="section" id="section1">
     <svg id="svgOne" width="100%" height="100%">
       <rect class="st0" x="0" y="65%" width="100%" height="30%" fill="white"></rect>
@@ -89,15 +88,19 @@
     <div class="col-md-8" id = "flow"></div>
     <div class="col-md-3" id = "flow-description">
       <h2>Select a country below</h2>
-      <div class="flow-select" id="India">Millions of bonded labor slaves from the "Dalit" class are saddled with bogus debts they can never work off.</div>
-      <div class="flow-select" id="United States">Each year, at least 14,500 people are trafficked into the U.S. and forced into slavery..</div>
-      <div class="flow-select" id="Nepal">Nepal.</div>
-      <div class="flow-select" id="Bhutan"p>Bhutan.</div>
-      <div class="flow-select" id="China">China.</div>
-      <div class="flow-select" id="All"p>All Countries.</div>
+      <p><em>Hover to show on map, click for more information</em></p>
+
+      <div class="flow-select" id="India">India</div>
+      <div class="flow-select" id="United States">United States</div>
+      <div class="flow-select" id="Indonesia">Indonesia</div>
+      <div class="flow-select" id="Lebanon"p>Lebanon</div>
+      <div class="flow-select" id="China">China</div>
+      <div class="flow-select" id="All"p>All Countries</div>
 
     </div>
   </div>
+
+
 
   <div class="section" id="section4">
     <h1>How Severe is the Problem?</h1>
