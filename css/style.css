@@ -3,6 +3,32 @@
 body {
   font-family: 'Helvetica Neue', sans-serif;
 }
+.flow-select:hover { background-color: rgba(255, 255, 255, 0.47); }
+
+#countries path {
+    fill: rgba(255, 255, 255, 0.06);
+    /*fill: #ccc;*/
+    stroke: rgba(247, 249, 253, 0.1);
+}
+
+#flow {
+    margin-top: 50px;
+}
+#flow-description {
+    margin-left: 30px;
+    margin-top: 50px;
+}
+.flow-select {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 70px;
+}
+#arcs path {
+    fill: None;
+    /*stroke: rgb(186, 20, 53, 1.0)*/
+    stroke-opacity: .9;
+}
 
 #globe-text h5{
    margin-top: 50px;
@@ -70,11 +96,14 @@ h1 .sub-headline {
     text-align: center;
 
 }
-
+#summary-data {
+    /*margin-left: 150px;*/
+}
 .node circle {
-    stroke: white;
-    stroke-width: 1px;
     fill: rgba(186, 20, 53, 0.96);
+}
+.node .ring {
+    fill: white;
 }
 
 .node text {
@@ -104,7 +133,6 @@ h1 .sub-headline {
     font-size : 150px;
     font-style: oblique;
     color : rgb(51, 51, 51);
-
 }
 
 text{

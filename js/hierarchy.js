@@ -8,8 +8,8 @@ Hierarchy = function(_parentElement, _data){
 Hierarchy.prototype.initVis = function(){
 	var vis = this;
 
-	vis.margin = {top: 40, right: 350, bottom: 20, left: 150},
-	    vis.width = 1200 - vis.margin.right - vis.margin.left,
+	vis.margin = {top: 40, right: 200, bottom: 40, left: 100},
+	    vis.width = 750 - vis.margin.right - vis.margin.left,
 	    vis.height = 400 - vis.margin.top - vis.margin.bottom;
 
 	vis.i = 0;
@@ -75,11 +75,17 @@ Hierarchy.prototype.updateVis = function(){
             })
         ;
 
+    vis.ring = vis.nodeEnter.append("circle")
+        .attr("class", "ring")
+        .attr("r", 12)
+        .attr("fill", 'white');
+
     vis.nodeEnter.append("circle")
         .attr("r", 10)
         .attr("fill", function (d) {
             return d.children ? "white" : "steelblue"
         });
+
     vis.nodeEnter.append("text")
         .attr("x", function (d) {
             return d.depth < 2 ? 0 : 20;
@@ -110,9 +116,21 @@ Hierarchy.prototype.updateVis = function(){
         .attr("class", "link")
         .attr("d", vis.diagonal);
 
-    vis.node.on('mouseover', vis.myTip.show)
-        .on('mouseout', vis.myTip.hide);
-	
+    vis.svg.on('mouseover', vis.blink);
+    vis.node.on('mouseover', vis.updateDescription);
+
+}
+Hierarchy.prototype.blink = function() {
+    for (i = 0; i != 30; i++) {
+        $('.ring').fadeTo(1500, 0.1).fadeTo(1500, 5.0);
+
+    }
+}
+Hierarchy.prototype.updateDescription = function(d){
+    $('.node').attr("fill", 'white');
+    var summaryData = "<br><br><h2>"+d.name+"</h2><br>" + "<strong><span >" + d.description + "</strong></span>";
+    document.getElementById("summary-data").innerHTML = summaryData;
+
 }
 
 	
