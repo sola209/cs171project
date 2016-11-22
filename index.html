@@ -23,15 +23,17 @@
   <script src="js/jquery.min.js"></script>
 
   <script type="text/javascript">
+
+
     $(document).ready(function() {
       $('#fullpage').fullpage({
         verticalCentered: true,
-        sectionsColor: ['#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f'],
+        sectionsColor: ['#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f'],
         afterRender: function(){
-
 
           //playing the video
           $('video').get(0).play();
+
         }
       });
 
@@ -48,7 +50,7 @@
 
 <div id="fullpage">
   <div class="section " id="section0">
-    <video autoplay loop muted id="myVideo">
+    <video autoplay loop muted id="MyVideo">
       <source src="img/slavery_1080.webm" type="video/webm">
     </video>
     <div class="layer overlay">
@@ -72,13 +74,29 @@
 
   <div class="section" id="section2">
     <h1>What exactly is human trafficking?</h1>
-    <div id="tree"></div>
+    <div class="col-md-8" id = "tree"></div>
+    <div class="col-md-4" id="summary-data">
+     <!-- <video autoplay loop muted id="myVideo">
+      <source src="img/16_04_20_bc-infographic.mp4" type="video/mp4">
+      </video>-->
+    </div>
 
 
   </div>
 
   <div class="section" id="section3">
     <h1>Human Trafficking is a Global Crisis</h1>
+    <div class="col-md-8" id = "flow"></div>
+    <div class="col-md-3" id = "flow-description">
+      <h2>Select a country below</h2>
+      <div class="flow-select" id="India">Millions of bonded labor slaves from the "Dalit" class are saddled with bogus debts they can never work off.</div>
+      <div class="flow-select" id="United States">Each year, at least 14,500 people are trafficked into the U.S. and forced into slavery..</div>
+      <div class="flow-select" id="Nepal">Nepal.</div>
+      <div class="flow-select" id="Bhutan"p>Bhutan.</div>
+      <div class="flow-select" id="China">China.</div>
+      <div class="flow-select" id="All"p>All Countries.</div>
+
+    </div>
   </div>
 
   <div class="section" id="section4">
@@ -184,8 +202,11 @@
 <script src="js/hierarchy.js"></script>
 <script src="js/globeSpin.js"></script>
 <script src="js/scatterchart.js"></script>
+<script src="js/flow.js"></script>
 <script src="js/main.js"></script>
 
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+
 </body>
 </html>
