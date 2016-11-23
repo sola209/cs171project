@@ -80,11 +80,11 @@ Hierarchy.prototype.updateVis = function(){
         .attr("r", 12)
         .attr("fill", 'white');
 
-    vis.nodeEnter.append("circle")
+    vis.circles = vis.nodeEnter.append("circle")
         .attr("r", 10)
         .attr("fill", function (d) {
-            return d.children ? "white" : "steelblue"
-        });
+            return "rgba(186, 20, 53, 0.96)"
+        })
 
     vis.nodeEnter.append("text")
         .attr("x", function (d) {
@@ -116,9 +116,10 @@ Hierarchy.prototype.updateVis = function(){
         .attr("class", "link")
         .attr("d", vis.diagonal);
 
-    vis.svg.on('mouseover', vis.blink);
-    vis.node.on('mouseover', vis.updateDescription);
-
+    //vis.svg.on('mouseover', vis.blink);
+    vis.circles.on('mouseover', vis.updateDescription)
+        .on("mouseout", vis.handleMouseout);
+   // vis.node.on("mouseover", vis.showDescription);
 }
 Hierarchy.prototype.blink = function() {
     for (i = 0; i != 30; i++) {
@@ -127,10 +128,44 @@ Hierarchy.prototype.blink = function() {
     }
 }
 Hierarchy.prototype.updateDescription = function(d){
-    $('.node').attr("fill", 'white');
-    var summaryData = "<br><br><h2>"+d.name+"</h2><br>" + "<strong><span >" + d.description + "</strong></span>";
+
+    d3.select(this).attr({
+        fill: "white"
+    })
+
+
+    var summaryData = "<br><br><h2>"+d.name+"</h2><br>" + "<div id='definition'>" + d.description + "</div>";
     document.getElementById("summary-data").innerHTML = summaryData;
 
 }
+Hierarchy.prototype.handleMouseout = function(d){
 
-	
+    d3.select(this).attr({
+        fill: "rgba(186, 20, 53, 0.96)"
+    });
+
+}
+Hierarchy.prototype.showDescription = function(d){
+    d3.select(this).append("text")
+        .attr("x", function (d) {
+            return 200;
+        })
+        .attr("dy", function (d) {
+            if (d.depth < 2) {
+                return "-1.5em"
+            }
+            else {
+                return "0.35em"
+            }
+        })
+        .style("text-anchor", function (d) {
+            return d.depth < 2 ? "middle" : "start";
+        })
+        .text(function (d) {
+            return d.description;
+        })
+        .style("fill-opacity", 1);
+
+
+}
+
