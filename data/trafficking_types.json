@@ -12,52 +12,52 @@
         "children": [
           {
             "name": "Forced Labor",
-            "description": "Occurs mainly in developing countries. Victims are recruited and trafficked using deception and coercion, and find themselves held in conditions of slavery in a variety of jobs. Source: https://www.interpol.int/",
+            "description": "Occurs mainly in developing countries. Victims are recruited and trafficked using deception and coercion, and find themselves held in conditions of slavery in a variety of jobs. The International Labour Organization estimates that  14.2 million people are subjected to forced labor, exploited in activities such as agriculture, construction, domestic work, and manufacturing. Source: https://www.interpol.int/",
             "parent": "Labor Trafficking",
-            "size": 3174,
+            "size": 121,
             "ID": "1.1.1"
           },
           {
             "name": "Debt Bondage",
-            "description": "Debt Bondage is a type of labor trafficking, involving a debt that cannot be paid off in a reasonable time. The employer/enforcer artificially inflates the amount of debt, adds exorbitant interest, and/or charges for living expenses, deducting little or nothing from the debt and increasing the amount of time the individual must work. This results in a cycle of debt where there is no hope for freedom. http://www.humantraffickingsearch.net/",
+            "description": "Debt Bondage is a type of labor trafficking, involving a debt that cannot be paid off in a reasonable time. The employer/enforcer artificially inflates the amount of debt, adds exorbitant interest, and/or charges for living expenses, deducting little or nothing from the debt and increasing the amount of time the individual must work, resulting in an endless cycle of debt. Source: www.humantraffickingsearch.net",
             "parent": "Labor Trafficking",
-            "size": 320,
+            "size": 24,
             "ID": "1.1.2"
           },
           {
             "name": "Child Labor",
-            "description": "Globally there are 168 million child laborers, over half of whom (85 million) are in hazardous work conditions. Child labor frequently refers to work that does have a deleterious effect on children’s health, including depriving them of a childhood and reaching their potential. In more extreme forms, Children may be abducted, sacrificed for the betterment of the family, or promised an education by their trafficker. They are trafficked into domestic work, sexual exploitation, hazardous child labor, begging, and other illegal activities such as stealing, illegal adoption, or early marriage. Source: http://www.humantraffickingsearch.net/",
+            "description": "Globally there are 168 million child laborers, over half of whom are in hazardous conditions. In more extreme forms, children may be abducted or sacrificed for the betterment of the family, or promised an education by their trafficker. They are trafficked into domestic work, hazardous child labor, begging, and other illegal activities such as stealing, illegal adoption, or early marriage. Source: www.humantraffickingsearch.net",
             "parent": "Labor Trafficking",
-            "size": 2312,
+            "size": 89,
             "ID": "1.1.3"
           },
           {
             "name": "Child Soldiers",
-            "description": "Globally there are 168 million child laborers, over half of whom (85 million) are in hazardous work conditions. Child labor frequently refers to work that does have a deleterious effect on children’s health, including depriving them of a childhood and reaching their potential. In more extreme forms, Children may be abducted, sacrificed for the betterment of the family, or promised an education by their trafficker. They are trafficked into domestic work, sexual exploitation, hazardous child labor, begging, and other illegal activities such as stealing, illegal adoption, or early marriage. Source: http://www.humantraffickingsearch.net/",
+            "description": "There are hundreds of thousands of child soldiers worldwide. Child soldiers are defined as individuals below the age of 18 who are, or have been, recruited or used by armed forces or groups in any capacity. The definition includes both boys and girls who are used as fighters, cooks, porters, messengers, spies, or for sexual purposes. Source: www.humantraffickingsearch.net",
             "parent": "Labor Trafficking",
-            "size": 181,
+            "size": 12,
             "ID": "1.1.4"
           }
         ]
       },
       {
         "name": "Sexual Exploitation",
-        "description": "Sex trafficking disproportionately affects women and children and involves forced participation in commercial sex acts. In the United States, any child under the age of 18 who has been involved in a commercial sex act is considered a trafficking victim. Women and girls make up 80% of the people trafficked transnationally. Yearly, traffickers exploit 1 million children in the commercial sex trade. Source: http://sf-hrc.org/",
         "parent": "Human Trafficking",
+        "description": "Sex trafficking is the recruitment, transportation, or harboring of persons through the use of force, fraud or coercion for the purpose of sexual exploitation. Sexual exploitation occurs in various settings, including (but not limited to) brothels, strip clubs, massage parlors, on the street (sometimes coined “track”), or in private homes. Individuals can be trafficked domestically and across international borders. Source: http://www.humantraffickingsearch.net/",
         "ID":"1.2",
         "children": [
           {
-            "name": "Forced Prostitution",
-            "description": "Sex trafficking disproportionately affects women and children and involves forced participation in commercial sex acts. In the United States, any child under the age of 18 who has been involved in a commercial sex act is considered a trafficking victim. Women and girls make up 80% of the people trafficked transnationally. Yearly, traffickers exploit 1 million children in the commercial sex trade. Source: http://sf-hrc.org/",
+            "name": "Sex Trafficking",
+            "description": "Sex trafficking or slavery is the exploitation of persons (typically women and children), for the purposes of forced sex work. Commercial sexual exploitation includes pornography, prostitution and sex trafficking of women and girls. Each year, an estimated 800,000 women and children are trafficked across international borders—though additional numbers of women and girls are trafficked within countries. Source: http://www.soroptimist.org/",
             "parent": "Sexual Exploitation",
-            "size": 3933,
+            "size": 138,
             "ID": "1.2.1"
           },
           {
-            "name": "Child Sex Exploitation",
-            "description": "Test",
+            "name": "Child Sex Trafficking",
+            "description": "In the United States, any child under the age of 18 who has been involved in a commercial sex act is considered a trafficking victim. Yearly, traffickers exploit 1 million children in the commercial sex trade. Source: http://sf-hrc.org/",
             "parent": "Sexual Exploitation",
-            "size": 2961,
+            "size": 111,
             "ID": "1.2.2"
           }
         ]

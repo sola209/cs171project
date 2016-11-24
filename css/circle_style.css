@@ -1,6 +1,4 @@
-#nodeCircle {
-    backround: 'img/india.jpg'
-}
+
 #chart {
     font-family: 'Helvetica Neue', sans-serif;
 
@@ -16,7 +14,7 @@
 
 a,
 a:hover {
-    color: #333333;
+    color: #ae9a9e;
 }
 
 .title {
@@ -43,14 +41,16 @@ a:hover {
 }
 
 #topText{
+    margin-top: 20px;
+    margin-right: 30px;
     text-align: left;
     font-family: 'Helvetica Neue', sans-serif;
 
     /*font-family: 'Merriweather Sans', sans-serif;*/
-    font-size: 11px;
+    font-size: 15px;
     /*margin-bottom: 10px;*/
     line-height: 1.5;
-    color: #7D7D7D;
+    color: #f5f5f5;
 }
 
 #searchTitle {
@@ -75,7 +75,7 @@ a:hover {
 
 #legendTitle {
     text-align: left;
-    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
     margin-bottom: 5px;
     font-size: 20px;
     color: #f5f5f5;
@@ -83,6 +83,7 @@ a:hover {
 
 #legendText {
     text-align: left;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-size: 15px;
     line-height: 1.5;

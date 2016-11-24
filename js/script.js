@@ -86,7 +86,7 @@ function drawAll() {
 							return d.titleHeight; 
 						})
 						.attr("dy","0em")
-						.text(function(d,i) { return d.name })
+						.text(function(d,i) { return d.name})
 						.style("font-size", function(d) {
 							//Calculate best font-size
 							d.fontTitleSize = current.r / 10//this.getComputedTextLength() * 20;				
@@ -96,6 +96,7 @@ function drawAll() {
 							d.textLength = current.r*2*0.7; 
 							wrap(this, d.textLength); 
 						});
+
 					
 					//Bar chart	wrapper			
 					var barWrapperInner = d3.select(this).selectAll(".innerBarWrapper")
@@ -110,10 +111,10 @@ function drawAll() {
 						})
 						.attr("y", function(d, i) { 
 							d.eachBarHeight = ((1 - barChartHeightOffset) * 1.5 * current.r * barChartHeight)/elementsPerBar;
-							d.barHeight = barChartHeightOffset*5*current.r + i*d.eachBarHeight - barChartHeight*current.r;
+							d.barHeight = barChartHeightOffset*6.5*current.r + i*d.eachBarHeight - barChartHeight*current.r;
 							return d.barHeight; 
 						});
-						
+
 					//Draw the bars
 					barWrapperInner.append("rect")
 						.attr("class", "innerBar")
@@ -121,7 +122,10 @@ function drawAll() {
 						.attr("height", function(d) {d.height = d.eachBarHeight*0.8; return d.height;})
 						.style("opacity", 0.8)
 						.style("fill", function(d) { return colorBar(d.age); });
-					
+
+
+
+
 					//Draw the age text	next to the bars		
 					barWrapperInner.append("text")
 						.attr("class", "innerText")
@@ -140,13 +144,13 @@ function drawAll() {
 					//Draw the value inside the bars		
 					barWrapperInner.append("text")
 						.attr("class", "innerValue")
-						.attr("dy", "1.8em")
+						.attr("dy", "1.6em")
 						.style("font-size", function(d) {
 							//Calculate best font-size
 							d.fontSizeValue = current.r / 22;				
 							return Math.round(d.fontSizeValue)+"px"; 
 						})
-						.text(function(d,i) { return commaFormat(d.value); })
+						.text(function(d,i) { return commaFormat(d.value) +  "%"; })
 						.each(function(d) {
 							d.valueWidth = this.getBBox().width;
 						 })
@@ -170,7 +174,7 @@ function drawAll() {
 	///////////// Function | The legend creation /////////////////
 	////////////////////////////////////////////////////////////// 
 
-	var legendSizes = [10,20,30];
+	var legendSizes = [20,40,60];
 
 	function createLegend(scaleFactor) {
 
@@ -258,7 +262,7 @@ function drawAll() {
 	function removeTooltip () {
 	  $('.popover').each(function() {
 		$(this).remove();
-	  }); 
+	  });
 	}
 	//Show the tooltip on the hovered over slice
 	function showTooltip (d) {
@@ -267,8 +271,8 @@ function drawAll() {
 		container: '#chart',
 		trigger: 'manual',
 		html : true,
-		content: function() { 
-		  return "<p class='nodeTooltip'>" + d.name + "</p>"; }
+		content: function() {
+		  return "<p class='nodeTooltip'>" + d.name + "<br>" + d.size + " countries</p>"; }
 	  });
 	  $(this).popover('show')
 	}
@@ -289,15 +293,13 @@ function drawAll() {
 		data = d3.nest()
 			.key(function(d) { return d.ID; })
 			.entries(csv);
-		 console.log(data)
 		dataMax = d3.nest()
 			.key(function(d) { return d.ID; })
 			.rollup(function(d) { return d3.max(d, function(g) {return g.value;}); })
 			.entries(csv);
 		
 		data.forEach(function (d, i) {
-			console.log(d.key)
-			dataById[d.key] = i; 
+			dataById[d.key] = i;
 		});	
 	 });
 	 
@@ -313,7 +315,6 @@ function drawAll() {
 	////////////////////////////////////////////////////////////// 
 		
 	d3.json("data/trafficking_types.json", function(error, dataset) {
-		console.log(data);
 		var nodes = pack.nodes(dataset);
 		root = dataset;
 		focus = dataset;		
@@ -377,7 +378,6 @@ function drawAll() {
 					return d.r; 
 				})
 				.on("click", function(d) {
-					d3.select(this).style("fill", null);
 					if (focus !== d) zoomTo(d); else zoomTo(root); });
 						
 		////////////////////////////////////////////////////////////// 
@@ -544,7 +544,7 @@ function zoomTo(d) {
 			.style("display",  null)
 			.attr("y", function(d) { return d.titleHeight * 0.8*k; })
 			.style("font-size", function(d) { return Math.round(d.fontTitleSize * k)+'px'; })
-			.text(function(d,i) { return d.name+" | "+ d.description;})
+			.text(function(d,i) { return d.name+" | "+ d.description + " || " + "Countries where it is identified in the highest"+ " || " +"percentage of U.S. TIP Reports from 2001 to 2011 ";})
 			.each(function(d) { wrap(this, k * d.textLength); });
 			
 		//Rescale the bars
@@ -683,17 +683,31 @@ function wrap(text, width) {
 	while (word = words.pop()) {
 	  line.push(word);
 	  tspan.text(line.join(" "));
-	  if (tspan.node().getComputedTextLength() > width | word === "|") {
-		if (word = "|") word = "";
+	  if (tspan.node().getComputedTextLength() > 1.05*width | word === "|" | word=="||") {
+		if (word == "|") word="";
 		line.pop();
 		tspan.text(line.join(" "));
-		line = [word];
-		tspan = text.append("tspan")
-					.attr("class","subTotal")
-					.attr("x", 0).attr("y", y*0.9)
-					.attr("dy", ++lineNumber * lineHeight + extraHeight + dy + "em")
-					.text(word)
-					.style("font-size", (Math.round(currentSize*0.5) <= 5 ? 0 : Math.round(currentSize*0.5))+"px");
+		  if (word == "||"){
+			  word="";
+			  line = [word];
+			  tspan = text.append("tspan")
+				  .attr("class","barTitle")
+				  .attr("x", 0)
+				  .attr("y", y)
+				  .attr("dy", ++lineNumber+4 * lineHeight + extraHeight + dy + "em")
+				  .style("font-size", (Math.round(currentSize*0.5) <= 5 ? 0 : Math.round(currentSize*0.5))+"px")
+				  .style("font-style", "italic")
+		  			.text(word)
+		  }
+		  else {
+			  line = [word];
+			  tspan = text.append("tspan")
+				  .attr("class","subTotal")
+				  .attr("x", 0).attr("y", y*0.9)
+				  .attr("dy", ++lineNumber * lineHeight + extraHeight + dy + "em")
+				  .text(word)
+				  .style("font-size", (Math.round(currentSize*0.5) <= 5 ? 0 : Math.round(currentSize*0.5))+"px");
+		  }
 	  }//if
 	}//while
 }//wrap
