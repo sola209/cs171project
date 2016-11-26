@@ -47,20 +47,39 @@ body {
     stroke-opacity: .9;
 }
 
-#globe-text h5{
-   margin-top: 50px;
-   font-size: 30px;
+.previous{
+    color: black;
+}
+
+.globe-text h5{
+    margin-top: 90px;
+    font-size: 35px;
     font-weight: normal;
 
 }
 
-#globe-text h6 {
-   font-size: 18px;
-   margin-left: 95px;
-   margin-right: 95px;
-   margin-bottom: 20px;
+.globe-text h6 {
+    font-size: 23px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     font-weight: lighter;
     text-align: left;
+
+}
+
+.globe-text p {
+    font-size: 18px;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.buttonDiv{
+    position:absolute;
+    bottom: 25px;
+    width: 100%;
 
 }
 
@@ -72,6 +91,13 @@ body {
 #globe-area{
     margin-top: 50px;
 }
+
+.popover{
+    max-width: 400px;
+    color: black;
+}
+
+
 h1 {
   font-weight: 100;
   font-size: 40px;
