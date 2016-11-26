@@ -47,10 +47,6 @@ body {
     stroke-opacity: .9;
 }
 
-.previous{
-    color: black;
-}
-
 .globe-text h5{
     margin-top: 90px;
     font-size: 35px;
@@ -95,6 +91,10 @@ body {
 .popover{
     max-width: 400px;
     color: black;
+}
+
+#MyanmarText{
+    text-align: center;
 }
 
 
