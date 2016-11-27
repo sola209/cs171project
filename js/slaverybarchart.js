@@ -9,7 +9,7 @@ SlaveryBarChart.prototype.initVis = function(){
 	var vis = this;
 
 	// console.log(vis.data);
-	vis.margin = {top: 120, right: 40, bottom: 40, left: 60};
+	vis.margin = {top: 140, right: 40, bottom: 40, left: 60};
 
 	vis.width = 800 - vis.margin.left - vis.margin.right,
 			vis.height = 500 - vis.margin.top - vis.margin.bottom;
@@ -56,7 +56,7 @@ SlaveryBarChart.prototype.initVis = function(){
 	// Add x-axis labels
 	vis.svg.append("text")
 	    .attr("x", vis.width / 4 )
-	    .attr("y",  -75)
+	    .attr("y",  -100)
 	    .attr("class", "axis-title")
 	    .style("text-anchor", "middle")
 	    .style("color", "teal")
@@ -64,7 +64,7 @@ SlaveryBarChart.prototype.initVis = function(){
 
     vis.svg.append("text")
 	    .attr("x", 3*vis.width / 4 )
-	    .attr("y",  -75)
+	    .attr("y",  -100)
 	    .attr("class", "axis-title")
 	    .style("text-anchor", "middle")
 	    .style("color", "teal")
@@ -137,28 +137,30 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("x", vis.width/2-20);
 
 	// Patterns for the background of the bars (stick men)
+	var widthOffset = 9
+	var heightOffset = 8
 	vis.svg.append("defs")
 		.append("pattern")
 		.attr("id", "bg")
 		.attr('patternUnits', 'userSpaceOnUse')
-		.attr('width', vis.y.rangeBand()-1)
-		.attr('height', vis.y.rangeBand()+8)
+		.attr('width', vis.y.rangeBand()-widthOffset)
+		.attr('height', vis.y.rangeBand()+heightOffset)
 		.append("image")
 		.attr("xlink:href", "img/stick-figure.png")
-		.attr('width', vis.y.rangeBand()-1)
-		.attr('height', vis.y.rangeBand()+8);
+		.attr('width', vis.y.rangeBand()-widthOffset)
+		.attr('height', vis.y.rangeBand()+heightOffset);
+
 
 	vis.svg.append("defs")
 		.append("pattern")
 		.attr("id", "bg2")
 		.attr('patternUnits', 'userSpaceOnUse')
-		.attr('width', vis.y.rangeBand()-1)
-		.attr('height', vis.y.rangeBand()+8)
+		.attr('width', vis.y.rangeBand()-widthOffset)
+		.attr('height', vis.y.rangeBand()+heightOffset)
 		.append("image")
 		.attr("xlink:href", "img/stick-figure-blue.png")
-		.attr('width', vis.y.rangeBand()-1)
-		.attr('height', vis.y.rangeBand()+8);
-
+		.attr('width', vis.y.rangeBand()-widthOffset)
+		.attr('height', vis.y.rangeBand()+heightOffset);
 
 	// Draw rectangles
 	vis.bar1 = vis.svg.selectAll(".enter")

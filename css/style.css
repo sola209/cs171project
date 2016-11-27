@@ -1,23 +1,81 @@
 
 
 body {
-  font-family: 'Helvetica Neue', sans-serif;
+
+    font-family: 'Helvetica Neue', sans-serif;
+}
+.flow-select:hover { background-color: rgba(255, 255, 255, 0.47); }
+
+#countries path {
+    fill: rgba(255, 255, 255, 0.06);
+    /*fill: #ccc;*/
+    stroke: rgba(247, 249, 253, 0.1);
 }
 
-#globe-text h5{
-   margin-top: 50px;
-   font-size: 30px;
+#myVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    /*background-color: black; /* in case the video doesn't fit the whole page*/
+    background-position: center center;
+    object-fit: cover; /*cover video background */
+    z-index:3;
+}
+#flow {
+    margin-top: 50px;
+}
+#flow-description {
+    margin-left: 0px;
+    margin-top: 10px;
+}
+.flow-select {
+    border: solid 1px rgba(255, 255, 255, 0.38);
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 40px;
+}
+#arcs path {
+    fill: None;
+    /*stroke: rgb(186, 20, 53, 1.0)*/
+    stroke-opacity: .9;
+}
+
+.globe-text h5{
+    margin-top: 90px;
+    font-size: 35px;
     font-weight: normal;
 
 }
 
-#globe-text h6 {
-   font-size: 18px;
-   margin-left: 95px;
-   margin-right: 95px;
-   margin-bottom: 20px;
+.globe-text h6 {
+    font-size: 23px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     font-weight: lighter;
     text-align: left;
+
+}
+
+.globe-text p {
+    font-size: 18px;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.buttonDiv{
+    position:absolute;
+    bottom: 25px;
+    width: 100%;
 
 }
 
@@ -29,6 +87,17 @@ body {
 #globe-area{
     margin-top: 50px;
 }
+
+.popover{
+    max-width: 400px;
+    color: black;
+}
+
+#MyanmarText{
+    text-align: center;
+}
+
+
 h1 {
   font-weight: 100;
   font-size: 40px;
@@ -70,11 +139,17 @@ h1 .sub-headline {
     text-align: center;
 
 }
+#summary-data {
+    margin-right: 0px;
+    margin-left: 20px;
+}
 
-.node circle {
-    stroke: white;
-    stroke-width: 1px;
-    fill: rgba(186, 20, 53, 0.96);
+#definition {
+    text-align: left;
+    font-weight: normal;
+}
+.node .ring {
+    fill: white;
 }
 
 .node text {
@@ -104,7 +179,6 @@ h1 .sub-headline {
     font-size : 150px;
     font-style: oblique;
     color : rgb(51, 51, 51);
-
 }
 
 text{
@@ -112,21 +186,6 @@ text{
 
 }
 
-#myVideo{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top:0;
-    right:0;
-    width: 100%;
-    height: 100%;
-    background-size: 100% 100%;
-    background-color: black; /* in case the video doesn't fit the whole page*/
-    background-position: center center;
-    background-size: contain;
-    object-fit: cover; /*cover video background */
-    z-index:3;
-}
 
 .st0
 {

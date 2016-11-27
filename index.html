@@ -11,13 +11,16 @@
 
   <title>Cover Template for Bootstrap</title>
 
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/jquery.fullPage.css" rel="stylesheet">
   <link href="css/cover.css" rel="stylesheet">
-
+  <link href="css/circle_style.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/loader-style.css" rel="stylesheet">
 
@@ -25,15 +28,17 @@
   <script src="js/jquery.min.js"></script>
 
   <script type="text/javascript">
+
+
     $(document).ready(function() {
       $('#fullpage').fullpage({
         verticalCentered: true,
-        sectionsColor: ['#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f'],
+        sectionsColor: ['#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f', '#3f3f3f'],
         afterRender: function(){
 
-
           //playing the video
-          $('video').get(0).play();
+          $("#myVideo").get(0).play();
+
         }
       });
 
@@ -49,28 +54,26 @@
 
 
 <div id="fullpage">
-  <!-- <div class="section" id="section-loader"> -->
 
-  <!-- </div> -->
-
-    <div class="section" id="section0">
+  <div class="section " id="section0">
 
     <div id="loader-wrapper">
       
       <div id="loader"></div>      
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
-    
+
     </div>
 
-        <video autoplay loop muted id="myVideo">
-          <source src="img/slavery_1080.webm" type="video/webm">
-        </video>
-        <div class="layer overlay">
-          The Invisible Crime
-          <h1>An interactive exploration into the world of human trafficking</h1>
-        </div>
-      </div>
+    <video autoplay loop muted id="myVideo">
+      <source src="img/slavery_1080.webm" type="video/webm">
+    </video>
+    <div class="layer overlay">
+      The Invisible Crime
+      <h1>An interactive exploration into the world of human trafficking</h1>
+    </div>
+  </div>
+
 
   <div class="section" id="section1">
     <svg id="svgOne" width="100%" height="100%">
@@ -87,14 +90,66 @@
 
   <div class="section" id="section2">
     <h1>What exactly is human trafficking?</h1>
-    <div id="tree"></div>
+    <div class="col-md-7" id = "tree"></div>
+    <div class="col-md-4" id="summary-data">
+     <!-- <video autoplay loop muted id="myVideo">
+      <source src="img/16_04_20_bc-infographic.mp4" type="video/mp4">
+      </video> -->
+    </div>
+  </div>
+
+  <div class="section" id="section10">
+    <div id="cont" class="container-fluid">
+      <div class="col-sm-8">
+        <div id="loadText">Loading Data</div>
+        <div id="chart"></div>
+      </div>
+      <div class="row text-center" style="margin-top: 100px;">
+        <div class="col-sm-4">
+          <div id="topTitle" class="title">A Look at the Forms of Trafficking</div>
+          <div id="topText">Human Trafficking can take many forms, including sexual exploitation, forced labor, and debt bondage. Click on each bubble at left to learn about the different forms that human trafficking takes globally and where it has been consistently reported.
+            Data is taken from the <a href="https://humantraffickingindicators.org/">Human Trafficking Indicators Database</a>, which codes information about trafficking flows from the U.S. State Department's Trafficking in Persons (TIP) annual reports between 2001 and 2011.
+          </div>
+          <hr>
+
+          <div class="row text-center" style=	"margin-top: 30px;">
+            <div class="col-sm-6">
+              <div id="legendTitle">Legend</div>
+              <div id="legendText">The size of each white circle is scaled according to the number of countries in which a significant number of incidences are reported yearly on average.
+              </div>
+            </div>
+            <div id="legendRowWrapper" class="col-sm-6">
+              <div id="legendTitle" style="text-align: center;">Number of countries</div>
+              <div class="legendSubTitle"></div>
+              <div id="legendCircles"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
 
   </div>
 
   <div class="section" id="section3">
     <h1>Human Trafficking is a Global Crisis</h1>
+    <div class="col-md-8" id = "flow"></div>
+    <div class="col-md-3" id = "flow-description">
+      <h2>Select a country below</h2>
+      <p><em>Hover to show on map, click for more information</em></p>
+
+      <div class="flow-select" id="India">India</div>
+      <div class="flow-select" id="United States">United States</div>
+      <div class="flow-select" id="Indonesia">Indonesia</div>
+      <div class="flow-select" id="Lebanon"p>Lebanon</div>
+      <div class="flow-select" id="China">China</div>
+      <div class="flow-select" id="All"p>All Countries</div>
+
+    </div>
   </div>
+
+
 
   <div class="section" id="section4">
     <h1>How Severe is the Problem?</h1>
@@ -103,22 +158,116 @@
 
   <div class="section" id="section5">
     <h1>How do Victims Experience Trafficking?</h1>
-    <div class="col-md-6" id = "leftColumn">
-
-    <div id="globe-area" style="text-align:center;"></div>
-
-    </div>
 
 
-    <div class="col-md-6" id = "rightColumn">
-        <div id="globe-text">
-            <h5 style="text-align:center;"></h5>
-            <h6 style="text-align:left;"></h6>
-            <p style="text-align:center;"> Placeholder for an individual's story</p>
+    <div class = "globe-and-text">
+      <div class="col-md-6" id = "leftColumn">
 
-            <center> <img id = "globeImage" src="img/general.jpg" width="75%"></center>
+        <div id="globe-area" style="text-align:center;"></div>
+
+      </div>
+
+
+      <div class="col-md-6" id = "rightColumn">
+
+
+        <div class="globe-text">
+          <div id="content-1">
+            <h5>United States</h5>
+            <h6><a class="myPopover" rel="popover" data-content='<img src="img/usa.jpg" class="img-responsive">' title="Modern slavery is not limited to outside the U.S."> "Entrapped in that little house,
+              the man beat and raped me regularly." - Maria Suarez</a></h6>
+            <p class = "globeStory">With her family struggling to survive on their small farm in Mexico, <a href = "https://www.vision.org/visionmedia/interviews/Maria_Suarez-Enslaved_and_Abused/47251.aspx"  target="_blank">Maria Suarez</a>
+              left for the United States.  A lady offered Maria housework at an elderly couple’s house.  Arriving at the house, Maria sensed something was not right as the phone had a lock on it.  Maria was held captive for 6 years, consistently raped and beaten.  She had no idea where she was (Azusa, California) and couldn’t even speak English.
+            </p>
+          </div>
+
+          <div id="content-2">
+            <h5>Cote d’Ivoire</h5>
+            <h6><a class="myPopover" rel="popover" data-content='<img src="img/ivorycoast.jpg" class="img-responsive">' title="Slaves are cheaper today than at any other point in history">
+              “In 1850, an average slave in the American South cost the equivalent of $40,000 in today’s money. Today a slave costs about $90 on average worldwide.” - Free the Slaves NGO
+            </a></h6>
+            <p class = "globeStory">
+              60% of <a href = "http://www.foodispower.org/slavery-chocolate/"  target="_blank">Cote d'Ivoire's</a> export revenue comes from cocoa.  The
+              industry relies on cheap, “disposable” slave labor.  There are approximately 2.3mm children working on cocoa farms in the Ivory Coast and Ghana.  The majority of these children come from poor neighboring countries of Mali and Burkina Faso.  These children - as young as 5 - are abducted or tricked into coming by promising false rewards, and then subjected to harsh labor conditions.
+          </div>
+
+          <div id="content-3">
+            <h5>Mali</h5>
+            <h6>“When people eat chocolate, they are eating my flesh.” - Mali Chocolate Slave</h6>
+            <div class="video-area" style="text-align:center;">
+              <iframe width="400" height="250" src="https://www.youtube.com/embed/5YaLXICexow?start=358&end=394" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div id="content-4">
+            <h5>India</h5>
+            <h6><a class="myPopover" rel="popover" data-content='<img src="img/india.jpg" class="img-responsive">' title="Dalit children working in a carpet loom">
+              "I just pray to god that my child will be found." - Chichay </a></h6>
+            <p class = "globeStory">
+              Chichay’s son went missing at the age of 6.  His son was found 5 years later thanks to a NGO assisted raid of the carpet loom that enslaved Chichay’s son.
+              <a href = "https://www.buzzfeed.com/tasneemnashrulla/xx-shocking-facts-of-slavery-and-child-labor-in-indias-hand?utm_term=.fe7On147Y5#.iw11E9pBAX"  target="_blank">Bonded labor slavery</a>
+              is common in India, affecting an approximated 15 million people.  The “Dalit” class - known as the “untouchables” - are saddled with insurmountable debt and forced to work in sub-human conditions for as little as 11 cents an hour.
+            </p>
+          </div>
+
+          <div id="content-5">
+            <h5>Indonesia</h5>
+            <h6><a class="myPopover" rel="popover" data-content='<img src="img/indonesia.jpg" class="img-responsive">' title="In 2015, The Indonesian government rescued more than 2,000 men off a remote island village of Benjina">
+              “The Captains forced us to drink unclean water and work 20-22 hours shifts with no days off” - Benjina Fisherman Slave </a></h6>
+            <p class = "globeStory">
+              In 1993, Myint Naing was 18-years-old and looking to support his family in Mynammar.  He agreed to work in Thailand as a fisherman and was promised modest financial reward.  Instead, he was taken to the remote island of Benjina, Indonesia where he was enslaved.  Working conditions were unbearable, for example needing to work in the ship’s giant freezer without proper clothes.  Myint
+              <a href = "http://www.ap.org/explore/seafood-from-slaves/ap-investigation-slaves-may-have-caught-the-fish-you-bought.html"  target="_blank">- along with thousands of others -</a>
+              was rescued in 2015, 22 years after he left home.
+            </p>
+          </div>
+
+          <div id="content-6">
+            <h5>Myanmar</h5>
+            <h6 id = "MyanmarText">Returning home after 22 years of slavery</h6>
+            <div class="video-area" style="text-align:center;">
+              <iframe width="400" height="250" src="https://www.youtube.com/embed/pIVPKQV40G4" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div id="content-7">
+            <h5>Lebonon</h5>
+            <h6><a class="myPopover" rel="popover" data-content='<img src="img/lebonon.jpg" class="img-responsive">' title="Domestic workers in Lebonon protesting for more rights">
+              Several countries have banned their citizens from working as domestic helpers in Lebanon given the slave-like conditions.</a></h6>
+            <p class = "globeStory">
+              <a href = "http://www.endslaverynow.org/blog/articles/beatrice-fernando"  target="_blank">Beatrice Fernando </a>
+              left Sri Lanka for Lebanon to work as a housemaid.  A divorcee, Beatrice was desperate to support her three year-old son.   The employer in fact acted more like a slave owner, having Beatrice work 20-hours a day polishing floors and shampooing carpets.  Food was not even provided, leaving Beatrice to scavenge through trash.  Desperate to escape, Beatrice jumped from the fourth story balcony.  Incredibly, she survived.
+            </p>
+          </div>
+
+          <div id="content-8">
+            <h5>Russia</h5>
+            <h6>Russia has the largest incidence of slavery in Europe.  Forced labour and commercial sex exploitation are the most common forms here.</h6>
+            <div class="video-area" style="text-align:center;">
+              <img src="img/russia2.jpg" width = "400" height = "250" class="img-thumbnail">
+            </div>
+          </div>
+
         </div>
+
+      </div>
+
     </div>
+
+    <div class = "buttonDiv">
+
+      <button type="button" class="btn btn-default" aria-label="Prev next" onclick="prevSpin()">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-default" aria-label="Prev next" onclick="nextSpin()">
+        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+      </button>
+    </div>
+
+
+
+
+
+
   </div>
 
   <div class="section" id="section6">
@@ -199,8 +348,12 @@
 <script src="js/hierarchy.js"></script>
 <script src="js/globeSpin.js"></script>
 <script src="js/scatterchart.js"></script>
+<script src="js/flow.js"></script>
+<script src="js/script.js"></script>
 <script src="js/main.js"></script>
 
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+
 </body>
 </html>
