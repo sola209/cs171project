@@ -3,7 +3,8 @@
     {
       "id": 840,
       "name": "United States",
-      "quote": "Each year, at least 14,500 people are trafficked into the U.S. and forced into slavery.",
+      "quote": "\"Entrapped in that little house, the man beat and raped me regularly.\" - Maria Suarez",
+      "story": "With her family struggling to survive on their small farm in Mexico, Maria Suarez left for the United States.  A lady offered Maria housework at an elderly couple’s house.  Arriving at the house, Maria sensed something was not right as the phone had a lock on it.  Maria was held captive for 6 years, consistently raped and beaten.  She had no idea where she was (Azusa, California) and couldn’t even speak English.",
       "image": "img\\general.jpg"
     },
     {
@@ -13,16 +14,16 @@
       "image": "img\\ivorycoast.jpg"
     },
     {
+      "id": 466,
+      "name": "Mali",
+      "quote": "Mali",
+      "image": "img\\ivorycoast.jpg"
+    },
+    {
       "id": 356,
       "name": "India",
       "quote": "Millions of bonded labor slaves from the \"Dalit\" class are saddled with bogus debts they can never work off.",
       "image": "img\\india.jpg"
-    },
-    {
-      "id": 643,
-      "name": "Russia Federation",
-      "quote": "Russia has the largest incidence of slavery in Europe.  Forced labour and commercial sex exploitation are the most common forms here. ",
-      "image": "img\\russia.jpg"
     },
     {
       "id": 360,
@@ -31,10 +32,19 @@
       "image": "img\\indonesia.jpg"
     },
     {
-      "id": 466,
-      "name": "Mali",
+      "id": 104,
+      "name": "Myanmar"
+    },
+    {
+      "id": 422,
+      "name": "Lebonon",
       "quote": "\"When people eat chocolate, they are eating my flesh.\" - Mali Chocolate Farm Slave",
       "image": "img\\mali.jpg"
+    },
+
+    {
+      "id": 643,
+      "name": "Russia Federation"
     }
   ]
 }

@@ -1,0 +1,209 @@
+
+#chart {
+    font-family: 'Helvetica Neue', sans-serif;
+
+    /*font-family: 'Merriweather Sans', sans-serif;*/
+    font-size: 10px;
+    font-weight: 400;
+    text-shadow: none;
+    color: #4c4c4c;
+    fill: #4c4c4c;
+    text-align: center;
+    cursor: default;
+}
+
+a,
+a:hover {
+    color: #ae9a9e;
+}
+
+.title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    /*font-family: 'Oswald', sans-serif;*/
+    color: #f5f5f5;
+    text-align: left;
+}
+
+#topTitle {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: lighter;
+
+}
+
+#subTitle {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #BFBFBF;
+    font-weight: 300;
+}
+
+#topText{
+    margin-top: 20px;
+    margin-right: 35px;
+    text-align: left;
+    font-family: 'Helvetica Neue', sans-serif;
+
+    /*font-family: 'Merriweather Sans', sans-serif;*/
+    font-size: 15px;
+    /*margin-bottom: 10px;*/
+    line-height: 1.5;
+    color: #f5f5f5;
+}
+
+#searchTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    font-size: 11px;
+}
+
+.dropdown-menu {
+    font-size: 11px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:hover,
+.dropdown-menu>.active>a:focus  {
+    background-color: #7D7D7D;
+}
+
+#legendTitle {
+    text-align: left;
+    /*font-family: 'Oswald', sans-serif;*/
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #f5f5f5;
+}
+
+#legendText {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #f5f5f5;
+}
+
+.legendCircle {
+    stroke-width:1;
+    stroke: #ffffff;
+    stroke-dasharray:2 2;
+    fill:none;
+}
+
+.legendLine {
+    stroke-width: 1;
+    stroke: #E0E0E0;
+    shape-rendering: crispEdges;
+}
+
+.legendTitle {
+    fill: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    text-anchor: middle;
+    font-size: 20px;
+}
+
+.legendSubTitle {
+    color: #BFBFBF;
+    text-anchor: middle;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.legendText {
+    text-anchor: start;
+    font-size: 15px;
+    fill: white;
+}
+
+#attribution {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+    /*bottom: 0px;
+    position: fixed;*/
+    color: #bfbfbf;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+#loadText {
+    color: white;
+    /*font-family: 'Oswald', sans-serif;*/
+    /*text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;*/
+    position: absolute;
+    text-align: center;
+    /*height:100%;*/
+    top:35%;
+    width:100%;
+    left:0%;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    #loadText {
+        font-size: 24px;
+        top:40%;
+    }
+}
+
+.nodeTooltip {
+    color: #333333;
+    font-family: 'Oswald', sans-serif;
+    text-anchor: middle;
+    font-size: 12px;
+    text-align: center;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.node:hover {
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.node--leaf {
+    fill: white;
+}
+
+.label,
+.hiddenArcWrapper,
+.barWrapperOuter,
+.popover,
+.node--root {
+    pointer-events: none;
+}
+
+.circleText {
+    text-anchor: middle;
+    fill: #f1f1f1;
+    letter-spacing: -3px;
+
+}
+
+.innerCircleTitle {
+    text-anchor: middle;
+}
+
+.subTotal {
+    font-weight: 100;
+    /*font-family: 'Oswald', sans-serif;*/
+}
+
+.innerText {
+    color: #4A4A4A;
+    text-anchor: end;
+}
+
+.innerValue {
+    /*font-weight: 700;*/
+}
