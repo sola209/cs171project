@@ -137,7 +137,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("x", vis.width/2-20);
 
 	// Patterns for the background of the bars (stick men)
-	var widthOffset = 9
+	var widthOffset = 1
 	var heightOffset = 8
 	vis.svg.append("defs")
 		.append("pattern")
@@ -149,7 +149,6 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("xlink:href", "img/stick-figure.png")
 		.attr('width', vis.y.rangeBand()-widthOffset)
 		.attr('height', vis.y.rangeBand()+heightOffset);
-
 
 	vis.svg.append("defs")
 		.append("pattern")
