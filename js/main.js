@@ -54,7 +54,7 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
     
     var video = document.getElementById("myVideo");
     // Don't toggle the loader until the video is loaded
-    while( (video.readyState !== 4) && (video.readyState !== 1)) {
+    while( (video.readyState !== 4) && (video.readyState !== 0)) {
         // $('body').toggleClass('loaded');
     }
 
