@@ -1,17 +1,17 @@
 
-#chart {
+#bubble-chart {
     font-family: 'Helvetica Neue', sans-serif;
-
-    /*font-family: 'Merriweather Sans', sans-serif;*/
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 400;
     text-shadow: none;
     color: #4c4c4c;
     fill: #4c4c4c;
     text-align: center;
     cursor: default;
+    margin-top: 70px;
 }
-
+#bubble-description {
+}
 a,
 a:hover {
     color: #ae9a9e;
@@ -20,7 +20,6 @@ a:hover {
 .title {
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: bold;
-    /*font-family: 'Oswald', sans-serif;*/
     color: #f5f5f5;
     text-align: left;
 }
@@ -45,8 +44,6 @@ a:hover {
     margin-right: 35px;
     text-align: left;
     font-family: 'Helvetica Neue', sans-serif;
-
-    /*font-family: 'Merriweather Sans', sans-serif;*/
     font-size: 15px;
     /*margin-bottom: 10px;*/
     line-height: 1.5;
@@ -186,7 +183,9 @@ a:hover {
 .circleText {
     text-anchor: middle;
     fill: #f1f1f1;
-    letter-spacing: -3px;
+    letter-spacing: -1px;
+    font-family: 'Helvetica Neue', sans-serif;
+
 
 }
 

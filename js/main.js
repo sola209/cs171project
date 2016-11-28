@@ -16,7 +16,7 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
 
 
     globeSpin = new GlobeSpin(world, globeData, "#globe-area");
-    var hierarchy = new Hierarchy("tree", hierarchy);
+    /*var hierarchy = new Hierarchy("tree", hierarchy);*/
     var slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
     var scatterchart = new ScatterChart("vis-area", gsi);
 
@@ -28,6 +28,14 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
         flowMap.wrangleData(this.id)} );
 
     $(".flow-select").click(function(){
+        descriptionText = {
+            "United States": "The United States acts primarily as a destination country for people that are trafficked internationally. Both sexual exploitation and forced labor are very prevalent.",
+            "Russia": "Russia acts as both a source and a destination country. Sexual exploitation is the dominant type of human trafficking.",
+            "Indonesia": "Indonesia acts primarily as a source country. People are trafficked out of Indonesia for sexual exploitation and forced labor.",
+            "India": "India mostly acts as a source country - that is, trafficking incidents tend to involve transport out of India. These cases include both sexual exploitation and forced labor.",
+            "Lebanon": "Lebanon acts primarily as a source country. Trafficking cases include both sexual exploitation and forced labor.",
+            "All": ""
+        }
         var current = this;
         $('.flow-select').each(function() {
             if ( $(this).height() > 60)
@@ -36,7 +44,7 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
         });
         if ( $(this).height() < 60){
             $( this ).animate({height: "+=90"},  { duration: 200, queue: false } );
-            $( this ).html("More information for you about "+this.id);}
+            $( this ).html(this.id + ": " + descriptionText[this.id]);}
         else
         {$( this ).animate({ height: "-=90" },  { duration: 200, queue: false });
             $( this ).html(""+this.id)};
@@ -45,6 +53,8 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
     $('body').toggleClass('loaded');
 
 }
+
+
 
 function nextSpin() {
     globeSpin.updateVis();

@@ -140,7 +140,7 @@ FlowMap.prototype.updateVis = function(){
 
             vis.displayFlows.forEach(function(flow) {
                // console.log(vis.selection);
-               // console.log([flow.Origin, flow.Dest]);
+                console.log([flow.Origin, flow.Dest]);
                 if (vis.selection=="All"||flow.Origin==vis.selection||flow.Dest==vis.selection){
                     console.log(vis.selection);
                 var o = nodeDataByCode[flow.Origin], co = o.coords, po = o.projection;
