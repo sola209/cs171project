@@ -1,38 +1,44 @@
 [
   {
   "name": "Human Trafficking",
-    "description": "Test",
+    "description": "Human trafficking is modern-day slavery and involves the use of force, fraud, or coercion to obtain some type of labor or commercial sex act. Source: https://www.dhs.gov",
   "parent": "null",
   "children": [
     {
       "name": "Labor Trafficking",
-      "description": "Test",
+      "description": "Labor trafficking is work or service that is extorted from someone under the menace of any penalty and work or service that the person has not offered voluntarily. Source: http://www.humantraffickingsearch.net/",
       "parent": "Human Trafficking",
       "children": [
         {
           "name": "Forced Labor",
-          "description": "Occurs mainly in developing countries. Victims are recruited and trafficked using deception and coercion and find themselves held in conditions of slavery in a variety of jobs.",
+          "description": "Occurs mainly in developing countries. Victims are recruited and trafficked using deception and coercion, and find themselves held in conditions of slavery in a variety of jobs. Source: https://www.interpol.int/",
           "parent": "Labor Trafficking"
         },
         {
           "name": "Debt Bondage",
-          "description": "Test",
+          "description": "Debt Bondage is a type of labor trafficking, involving a debt that cannot be paid off in a reasonable time. The employer/enforcer artificially inflates the amount of debt, adds exorbitant interest, and/or charges for living expenses, deducting little or nothing from the debt and increasing the amount of time the individual must work. This results in a cycle of debt where there is no hope for freedom. http://www.humantraffickingsearch.net/",
+          "parent": "Labor Trafficking"
+        },
+        {
+          "name": "Child Labor",
+          "description": "Globally there are 168 million child laborers, over half of whom (85 million) are in hazardous work conditions. Child labor frequently refers to work that does have a deleterious effect on children’s health, including depriving them of a childhood and reaching their potential. In more extreme forms, Children may be abducted, sacrificed for the betterment of the family, or promised an education by their trafficker. They are trafficked into domestic work, sexual exploitation, hazardous child labor, begging, and other illegal activities such as stealing, illegal adoption, or early marriage. Source: http://www.humantraffickingsearch.net/",
           "parent": "Labor Trafficking"
         }
       ]
     },
     {
       "name": "Sexual Exploitation",
-      "description": "Test",
+      "description": "Sex trafficking disproportionately affects women and children and involves forced participation in commercial sex acts. In the United States, any child under the age of 18 who has been involved in a commercial sex act is considered a trafficking victim. Women and girls make up 80% of the people trafficked transnationally. Yearly, traffickers exploit 1 million children in the commercial sex trade. Source: http://sf-hrc.org/",
+
       "parent": "Human Trafficking",
       "children": [
         {
           "name": "Forced Prostitution",
-          "description": "Test",
+          "description": "Sex trafficking disproportionately affects women and children and involves forced participation in commercial sex acts. In the United States, any child under the age of 18 who has been involved in a commercial sex act is considered a trafficking victim. Women and girls make up 80% of the people trafficked transnationally. Yearly, traffickers exploit 1 million children in the commercial sex trade. Source: http://sf-hrc.org/",
           "parent": "Sexual Exploitation"
         },
         {
-          "name": "Sexual Slavery",
+          "name": "Child Sex Exploitation",
           "description": "Test",
           "parent": "Sexual Exploitation"
         }
@@ -40,7 +46,7 @@
     },
     {
       "name": "Organ Trade",
-      "description": "Trafficking of humans for the purpose of using their organs, in particular kidneys.",
+      "description": "Trafficking in humans for the purpose of using their organs, in particular kidneys, is a rapidly growing field of criminal activity. In many countries, waiting lists for transplants are very long, and criminals have seized this opportunity to exploit the desperation of patients and potential donors. Source: https://www.interpol.int/",
       "parent": "Human Trafficking"
     }
   ]

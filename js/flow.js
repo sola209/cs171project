@@ -9,7 +9,7 @@ FlowMap = function(_parentElement, _data){
     this.nodes = _data[1];
     this.flows = _data[2];
     this.displayFlows =_data[2];
-    console.log(this.displayFlows)
+    // console.log(this.displayFlows)
     this.selection = "None";
     this.initVis();
 }
@@ -140,9 +140,9 @@ FlowMap.prototype.updateVis = function(){
 
             vis.displayFlows.forEach(function(flow) {
                // console.log(vis.selection);
-               // console.log([flow.Origin, flow.Dest]);
+                // console.log([flow.Origin, flow.Dest]);
                 if (vis.selection=="All"||flow.Origin==vis.selection||flow.Dest==vis.selection){
-                    console.log(vis.selection);
+                    // console.log(vis.selection);
                 var o = nodeDataByCode[flow.Origin], co = o.coords, po = o.projection;
                 var d = nodeDataByCode[flow.Dest], cd = d.coords, pd = d.projection;
                 var magnitude = 4;
@@ -230,7 +230,10 @@ FlowMap.prototype.updateVis = function(){
             var gradient = gradientSelection.enter()
                     .append("svg:linearGradient")
                     .attr("id", gradientNameFun)
-                    .attr("gradientUnits", "userSpaceOnUse")
+                    .attr("gradientUnits", "userSpaceOnUse");
+
+                var gradientUpdate = gradient.transition()
+                        .duration(5000)
                     .attr("x1", function(d) {
                         return d.originp[0]; })
                     .attr("y1", function(d) { return d.originp[1]; })
@@ -238,15 +241,15 @@ FlowMap.prototype.updateVis = function(){
                     .attr("y2", function(d) { return d.destp[1]; })
                 ;
 
-            gradient.append("svg:stop")
+    gradient.append("svg:stop")
                 .attr("offset", "0%")
                 .attr("stop-color", minColor)
                 .attr("stop-opacity", .0);
-            gradient.append("svg:stop")
+    gradient.append("svg:stop")
                 .attr("offset", "80%")
                 .attr("stop-color", strokeFun)
                 .attr("stop-opacity", 1.0);
-            gradient.append("svg:stop")
+    gradient.append("svg:stop")
                 .attr("offset", "100%")
                 .attr("stop-color", strokeFun)
                 .attr("stop-opacity", 1.0);
@@ -264,6 +267,7 @@ FlowMap.prototype.updateVis = function(){
                 //.attr("stroke", strokeFun)
                 .attr("stroke-linecap", "round")
                 .attr("stroke-width", function(d) { return arcWidth(d.magnitude); })
+                    .transition()
                 .attr("d", function(d) {
                     if (vis.useGreatCircles)
                         return splitPath(vis.path(vis.arc(d)));

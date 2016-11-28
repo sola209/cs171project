@@ -67,6 +67,9 @@ ScatterChart.prototype.initVis = function() {
 
     vis.svg.call(tip);
 
+    d3.select("#attribute-type").on("change", vis.wrangleData());
+
+
     vis.wrangleData();
 
 }
@@ -74,6 +77,8 @@ ScatterChart.prototype.initVis = function() {
 ScatterChart.prototype.wrangleData = function(){
 
     var vis = this;
+
+    console.log("Wranglin'")
 
     vis.data_filtered = vis.data.filter(function (d) {
         return d["EST_POP_SLAVERY"] != "no data" && d["Total score (/100)"] != "no data"
@@ -122,7 +127,7 @@ ScatterChart.prototype.wrangleData = function(){
 
     vis.data_clean = vis.data_filtered.map(function (d) {
         var _d = [d.Country,
-            +d["EST_POP_SLAVERY"],
+            +d["EST_PROP_SLAVERY"],
             +d["Total score (/100)"],
             d["POPULATION"],//.replace(/\,/g, ''),
             d["GEOGRAPHIC_REGION"],

@@ -8,6 +8,8 @@ SlaveryBarChart = function(_parentElement, _data){
 SlaveryBarChart.prototype.initVis = function(){
 	var vis = this;
 
+	vis.selectOption = document.getElementById("barchart-selector").value;
+
 	// console.log(vis.data);
 	vis.margin = {top: 140, right: 40, bottom: 40, left: 60};
 
@@ -23,6 +25,8 @@ SlaveryBarChart.prototype.initVis = function(){
 	// Scales and axes
 	vis.x1 = d3.scale.linear()
 	    .range([vis.width/2, 0]);
+
+	console.log(vis.x1);
 
 	vis.x2 = d3.scale.linear()
 	    .range([vis.width/2, vis.width]);
@@ -67,8 +71,8 @@ SlaveryBarChart.prototype.initVis = function(){
 	    .attr("y",  -100)
 	    .attr("class", "axis-title")
 	    .style("text-anchor", "middle")
-	    .style("color", "teal")
-	    .text("Individuals Supported to Exit Slavery");
+	    .style("color", "teal");
+	    // .text("Individuals Supported to Exit Slavery");
 
 
 	vis.wrangleData();
@@ -81,6 +85,7 @@ SlaveryBarChart.prototype.wrangleData = function(){
 		d.POPULATION = parseInt(d.POPULATION.replace(/,/g, ''));
 		d.EST_POP_SLAVERY = parseInt(d.EST_POP_SLAVERY.replace(/,/g, ''));
 		d.EXIT_SLAVERY = parseInt(d.EXIT_SLAVERY.replace(/,/g, ''));
+		d.JUSTICE = +d.JUSTICE
 	});
 
 	vis.displayData = vis.data.filter(function(d) {
@@ -99,13 +104,23 @@ SlaveryBarChart.prototype.wrangleData = function(){
 
 SlaveryBarChart.prototype.updateVis = function(){
 	var vis = this;
+	d3.select("#barchart-info").html("");
+
+	// console.log(vis);
+	// console.log("Top update", vis.displayData);
+
+	vis.selectOption = document.getElementById("barchart-selector").value;
+	vis.displayVariable = vis.selectOption == "exit" ? "EXIT_SLAVERY" : "JUSTICE"
+
+	console.log(vis.displayVariable);
 
 	// Update the axes
 	vis.enter_vals = vis.displayData.map(function(d) {
 		return d.EST_POP_SLAVERY;
 	});
+
 	vis.exit_vals = vis.displayData.map(function(d) {
-		return d.EST_POP_SLAVERY*d.EXIT_SLAVERY/100;
+		return d.EST_POP_SLAVERY*d[vis.displayVariable]/100;
 	});
 
 	vis.x1.domain([0, d3.max(vis.enter_vals)]);
@@ -135,9 +150,12 @@ SlaveryBarChart.prototype.updateVis = function(){
 	// Move the y axis labels over to the right
 	vis.svg.selectAll(".y-axis text")
 		.attr("x", vis.width/2-20);
+	
+	// console.log("Mid update", vis.displayData);
+
 
 	// Patterns for the background of the bars (stick men)
-	var widthOffset = 9
+	var widthOffset = -2
 	var heightOffset = 8
 	vis.svg.append("defs")
 		.append("pattern")
@@ -147,7 +165,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr('height', vis.y.rangeBand()+heightOffset)
 		.append("image")
 		.attr("xlink:href", "img/stick-figure.png")
-		.attr('width', 30)
+		.attr('width', vis.y.rangeBand()-widthOffset)
 		.attr('height', vis.y.rangeBand()+heightOffset);
 
 	vis.svg.append("defs")
@@ -158,9 +176,8 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr('height', vis.y.rangeBand()+heightOffset)
 		.append("image")
 		.attr("xlink:href", "img/stick-figure-blue.png")
-		.attr('width', 30)
+		.attr('width', vis.y.rangeBand()-widthOffset)
 		.attr('height', vis.y.rangeBand()+heightOffset);
-
 
 	// Draw rectangles
 	vis.bar1 = vis.svg.selectAll(".enter")
@@ -168,15 +185,40 @@ SlaveryBarChart.prototype.updateVis = function(){
 
 	vis.bar1.enter().append("rect")
 		.attr("x", function(d) { 
-			console.log("should be drawing a rect...")
+			// console.log("should be drawing a rect...")
 			return vis.x1(d.EST_POP_SLAVERY) })
 		.attr("y", function(d) { return vis.y(d.Country); })
 		.attr("width", function(d) { 
 			var val = vis.width/2 - vis.x1(d.EST_POP_SLAVERY);
-			return isNaN(val) ? 0 : val; })
+			return (isNaN(val) || val < 0) ? 0 : val; })
+		.attr("height", vis.y.rangeBand())
+		.attr("fill", "url(#bg)")
+		.attr("class", "enter")
+        .on('mouseover', function(d) {
+        	d3.select(this).style("stroke", "#e74c3c").style("stroke-width", "2");
+        })
+        .on('mouseout', function(d) {
+        	d3.select(this).style("stroke", "black").style("stroke-width", "0");
+        })
+		.on('click', function(d){ 
+			console.log(vis.displayVariable);
+			var text = (document.getElementById("barchart-selector").value == "exit") ? "only " + d.EXIT_SLAVERY + "% are supported to exit slavery." : "only " + d.JUSTICE + "% receive criminal justice responses."
+			d3.select("#barchart-info").html(d.Country + " has " + d.EST_POP_SLAVERY + " estimated enslaved individuals. Among them, " + text);
+		 });
+
+	vis.bar1
+		.attr("x", function(d) { 
+			// console.log("should be drawing a rect...")
+			return vis.x1(d.EST_POP_SLAVERY) })
+		.attr("y", function(d) { return vis.y(d.Country); })
+		.attr("width", function(d) { 
+			var val = vis.width/2 - vis.x1(d.EST_POP_SLAVERY);
+			return (isNaN(val) || val < 0) ? 0 : val; })
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "url(#bg)")
 		.attr("class", "enter");
+
+	vis.bar1.exit().remove();
 
 	vis.bar2 = vis.svg.selectAll(".exit")
 		.data(vis.displayData);
@@ -185,11 +227,34 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("x", vis.width/2)
 		.attr("y", function(d) { return vis.y(d.Country); })
 		.attr("width", function(d) { 
-			var val = vis.x2(d.EST_POP_SLAVERY*d.EXIT_SLAVERY / 100) - vis.width/2;
-			return isNaN(val) ? 0 : val; })
+			var val = vis.x2(d.EST_POP_SLAVERY*d[vis.displayVariable] / 100) - vis.width/2;
+			return (isNaN(val) || val < 0) ? 0 : val; })
+		.attr("height", vis.y.rangeBand())
+		.attr("fill", "url(#bg2)" )
+		.attr("class", "exit")
+        .on('mouseover', function(d) {
+        	d3.select(this).style("stroke", "#e74c3c").style("stroke-width", "2");
+        })
+        .on('mouseout', function(d) {
+        	d3.select(this).style("stroke", "black").style("stroke-width", "0");
+        })
+		.on('click', function(d){ 
+			console.log(vis.displayVariable);
+			var text = (document.getElementById("barchart-selector").value == "exit") ? "only " + d.EXIT_SLAVERY + "% are supported to exit slavery." : "only " + d.JUSTICE + "% receive criminal justice responses."
+			d3.select("#barchart-info").html(d.Country + " has " + d.EST_POP_SLAVERY + " estimated enslaved individuals. Among them, " + text);
+		 });
+
+	vis.bar2
+		.transition().duration(1000)
+		.attr("x", vis.width/2)
+		.attr("y", function(d) { return vis.y(d.Country); })
+		.attr("width", function(d) { 
+			var val = vis.x2(d.EST_POP_SLAVERY*d[vis.displayVariable] / 100) - vis.width/2;
+			return (isNaN(val) || val < 0) ? 0 : val; })
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "url(#bg2)" )
 		.attr("class", "exit");
 
+	vis.bar2.exit().remove();
+	// console.log("End of update", vis.displayData);
 }
-
