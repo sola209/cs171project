@@ -310,3 +310,90 @@ h1 .sub-headline {
 #barchart-selector option {
     color: #e74c3c;
 }
+
+/* Omar's styles */
+
+.labels {
+    fill: lightskyblue;
+}
+#title_area {
+    margin: 0 0 200px 0;
+}
+
+#circle circle {
+    fill: none;
+    pointer-events: all;
+}
+
+.group path {
+    fill-opacity: .5;
+}
+
+path.chord {
+    stroke: #000;
+    stroke-width: .25px;
+}
+
+#circle:hover path.fade {
+    display: none;
+}
+
+#vis-area {
+    width: 100%;
+}
+
+h3 {
+    color: white;
+}
+
+td {
+    color: lightsteelblue;
+}
+
+
+#desc {
+
+    margin: 50px 0 0 0;
+    color: antiquewhite;
+    font-size: 16px;
+    width: 60%;
+    font-weight: 100;
+
+}
+
+#vis-area text {
+    font-size: 11px;
+}
+
+#colorlabel {
+
+    color: antiquewhite;
+}
+
+#chorddesc {
+    width: 50%;
+    float: left;
+}
+
+#container {
+    width: 50%;
+    float: left;
+}
+
+.description{
+    font-size: 20px;
+    fill: white;
+}
+
+.table {
+    margin: 25px 0 0 0;
+    width: 60%;
+}
+
+form {
+    margin: 25px 0 0 0;
+}
+
+#colorscale {
+    margin: 25px 0 0 0;
+}

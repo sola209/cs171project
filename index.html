@@ -279,24 +279,74 @@
   </div>
 
   <div class="section" id="section6">
-    <h1>How are Governments Responding?</h1>
 
-    <form class="form-inline">
-      <div class="form-group">
-        <label for="rankingType">Region</label>
-        <select class="form-control" id="attribute-type">
-          <option value="All">Worldwide</option>
-          <option value="Russia_Eurasia">Russia & Eurasia</option>
-          <option value="Europe">Europe</option>
-          <option value="Americas">Americas</option>
-          <option value="Middle_East_North_Africa">Middle East & North Africa</option>
-          <option value="Asia">Asia</option>
-          <option value="Subsaharan_Africa">Sub-Saharan Africa</option>
-        </select>
+      <div id="vis-area">
+
+          <div id="container">
+
+          </div>
+          <div id = "chorddesc">
+
+              <center><h3>How are governments responding?</h3>
+
+                  <form class="form-inline">
+                      <div class="form-group">
+                          <select class="form-control" id="attribute-type" onchange = "update_text()">
+                              <option value="global">Global</option>
+                              <option value="europe">Europe</option>
+                              <option value="americas">Americas</option>
+                              <option value="asia">Asia</option>
+                              <option value="subsaharan_africa">Sub-Saharan Africa</option>
+                              <option value="russia_eurasia">Russia & Eurasia</option>
+                              <option value="middle_east">Middle East</option>
+                          </select>
+                      </div>
+                  </form>
+
+                  <table class="table">
+                      <tbody>
+                      <tr>
+                          <td>Number of Nations</td>
+                          <td id="numnations">168</td>
+                      </tr>
+                      <tr>
+                          <td>Mean Vulnerability (/100)</td>
+                          <td id="vuln">38.7</td>
+                      </tr>
+                      <tr>
+                          <td>Mean Trafficking (% of Pop.)</td>
+                          <td id="traff">0.54%</td>
+                      </tr>
+                      <tr>
+                          <td>Mean Government Responsiveness (/100)</td>
+                          <td id="resp">39.7</td>
+                      </tr>
+                      </tbody>
+                  </table>
+
+                  <p id = "desc">
+
+                      The crime of trafficking in persons affects virtually every
+                      country in every region of the world. Between 2010 and
+                      2012, victims with 152 different citizenships were identified
+                      in 124 countries across the globe.<br/> <br/>
+
+                      Transregional trafficking flows are mainly detected in the
+                      rich countries of the Middle East, Western Europe and
+                      North America. These flows often involve victims from
+                      the ‘global south’; mainly East and South Asia and SubSaharan
+                      Africa.
+
+                  </p>
+
+                  <img id="colorscale" src="img/colorscale.png"/>
+
+                  <p id = "colorlabel">More Responsive &#160 &#160 &#160 &#160 &#160 &#160 &#160 Less Responsive</p>
+
+              </center>
+
+          </div>
       </div>
-    </form>
-
-    <div id="vis-area"></div>
 
   </div>
 
@@ -355,7 +405,7 @@
 <script src="js/slaverybarchart.js"></script>
 <script src="js/hierarchy.js"></script>
 <script src="js/globeSpin.js"></script>
-<script src="js/scatterchart.js"></script>
+<script src="js/chord.js"></script>
 <script src="js/flow.js"></script>
 <script src="js/script.js"></script>
 <script src="js/main.js"></script>
