@@ -9,7 +9,7 @@ FlowMap = function(_parentElement, _data){
     this.nodes = _data[1];
     this.flows = _data[2];
     this.displayFlows =_data[2];
-    console.log(this.displayFlows)
+    // console.log(this.displayFlows)
     this.selection = "None";
     this.initVis();
 }
@@ -140,9 +140,9 @@ FlowMap.prototype.updateVis = function(){
 
             vis.displayFlows.forEach(function(flow) {
                // console.log(vis.selection);
-                console.log([flow.Origin, flow.Dest]);
+                // console.log([flow.Origin, flow.Dest]);
                 if (vis.selection=="All"||flow.Origin==vis.selection||flow.Dest==vis.selection){
-                    console.log(vis.selection);
+                    // console.log(vis.selection);
                 var o = nodeDataByCode[flow.Origin], co = o.coords, po = o.projection;
                 var d = nodeDataByCode[flow.Dest], cd = d.coords, pd = d.projection;
                 var magnitude = 4;

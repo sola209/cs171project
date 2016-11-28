@@ -304,6 +304,7 @@ h1 .sub-headline {
 
 #barchart-selector  {
     background-color: #333;
+    font-size: 20px;
 }
 
 #barchart-selector option {

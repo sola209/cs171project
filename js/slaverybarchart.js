@@ -190,7 +190,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("y", function(d) { return vis.y(d.Country); })
 		.attr("width", function(d) { 
 			var val = vis.width/2 - vis.x1(d.EST_POP_SLAVERY);
-			return isNaN(val) ? 0 : val; })
+			return (isNaN(val) || val < 0) ? 0 : val; })
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "url(#bg)")
 		.attr("class", "enter")
@@ -213,7 +213,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("y", function(d) { return vis.y(d.Country); })
 		.attr("width", function(d) { 
 			var val = vis.width/2 - vis.x1(d.EST_POP_SLAVERY);
-			return isNaN(val) ? 0 : val; })
+			return (isNaN(val) || val < 0) ? 0 : val; })
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "url(#bg)")
 		.attr("class", "enter");
@@ -228,7 +228,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("y", function(d) { return vis.y(d.Country); })
 		.attr("width", function(d) { 
 			var val = vis.x2(d.EST_POP_SLAVERY*d[vis.displayVariable] / 100) - vis.width/2;
-			return isNaN(val) ? 0 : val; })
+			return (isNaN(val) || val < 0) ? 0 : val; })
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "url(#bg2)" )
 		.attr("class", "exit")
@@ -244,12 +244,13 @@ SlaveryBarChart.prototype.updateVis = function(){
 			d3.select("#barchart-info").html(d.Country + " has " + d.EST_POP_SLAVERY + " estimated enslaved individuals. Among them, " + text);
 		 });
 
-	vis.bar2.enter().append("rect")
+	vis.bar2
+		.transition().duration(1000)
 		.attr("x", vis.width/2)
 		.attr("y", function(d) { return vis.y(d.Country); })
 		.attr("width", function(d) { 
 			var val = vis.x2(d.EST_POP_SLAVERY*d[vis.displayVariable] / 100) - vis.width/2;
-			return isNaN(val) ? 0 : val; })
+			return (isNaN(val) || val < 0) ? 0 : val; })
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "url(#bg2)" )
 		.attr("class", "exit");
