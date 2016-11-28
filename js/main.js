@@ -1,4 +1,5 @@
 var globeSpin;
+var slaveryBarchart; 
 
 queue()
     .defer(d3.json, "data/world-110m.json")
@@ -16,8 +17,9 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
 
 
     globeSpin = new GlobeSpin(world, globeData, "#globe-area");
-    /*var hierarchy = new Hierarchy("tree", hierarchy);*/
-    var slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
+    // var hierarchy = new Hierarchy("tree", hierarchy);
+    slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
+
     var scatterchart = new ScatterChart("vis-area", gsi);
 
     d3.select("#attribute-type").on("change", scatterchart.wrangleData());
@@ -49,8 +51,15 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
         {$( this ).animate({ height: "-=90" },  { duration: 200, queue: false });
             $( this ).html(""+this.id)};
     });
+    
+    var video = document.getElementById("myVideo");
+    // Don't toggle the loader until the video is loaded
+    while( (video.readyState !== 4) && (video.readyState !== 0) ) {
+        console.log(video.readyState);
+    }
 
     $('body').toggleClass('loaded');
+
 
 }
 
@@ -64,3 +73,6 @@ function prevSpin() {
     globeSpin.prevUpdateVis();
 }
 
+function updateBar() {
+    slaveryBarChart.updateVis();
+}

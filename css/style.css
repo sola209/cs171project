@@ -297,3 +297,15 @@ h1 .sub-headline {
 #vis-area text {
     fill:white;
 }
+
+#barchart-text b {
+    color: #e74c3c;
+}
+
+#barchart-selector  {
+    background-color: #333;
+}
+
+#barchart-selector option {
+    color: #e74c3c;
+}
