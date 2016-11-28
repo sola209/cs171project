@@ -56,15 +56,15 @@
 <div id="fullpage">
 
   <div class="section " id="section0">
-
-    <div id="loader-wrapper">
-      
-      <div id="loader"></div>      
+    <div id="loader-wrapper">  
+      <div id="loading-text">
+        <b>45,000,000</b> people<br>are currently estimated to be victims of modern slavery.
+      </div>  
+      <div id="loader"></div>  
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
 
     </div>
-
     <video autoplay loop muted id="myVideo">
       <source src="img/slavery_1080.webm" type="video/webm">
     </video>
@@ -152,7 +152,16 @@
 
   <div class="section" id="section4">
     <h1>How Severe is the Problem?</h1>
-      <div id="slavery-barchart"></div> 
+      <div id="slavery-barchart" class="col-md-8"></div> 
+      <div id="barchart-text" class="col-md-3">
+        <h3>Of the <b>millions</b> in slavery, how many</h3>
+        <select id="barchart-selector" onchange="updateBar()">
+          <option value="exit" default>are supported to exit?</option>
+          <option value="justice">receive criminal justice responses?</option>
+        </select>
+        </br></br>
+        <div id="barchart-info"></div>
+      </div>
   </div>
 
   <div class="section" id="section5">
