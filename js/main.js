@@ -20,6 +20,12 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
     // var hierarchy = new Hierarchy("tree", hierarchy);
     slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
 
+
+
+
+
+
+
     var flowMap = new FlowMap("#flow", [world, nodes, flows]);
     var countryInfo =
     // Update the visualization
@@ -52,7 +58,7 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
     var video = document.getElementById("myVideo");
     // Don't toggle the loader until the video is loaded
     while( (video.readyState !== 4) && (video.readyState !== 0)) {
-        // $('body').toggleClass('loaded');
+        console.log(video.readyState);
     }
 
     $('body').toggleClass('loaded');
