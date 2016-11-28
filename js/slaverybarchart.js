@@ -175,7 +175,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr('width', vis.y.rangeBand()-widthOffset)
 		.attr('height', vis.y.rangeBand()+heightOffset)
 		.append("image")
-		.attr("xlink:href", "img/stick-figure-blue.png")
+		.attr("xlink:href", "img/stick-figure-red.png")
 		.attr('width', vis.y.rangeBand()-widthOffset)
 		.attr('height', vis.y.rangeBand()+heightOffset);
 
