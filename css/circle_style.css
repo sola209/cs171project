@@ -8,8 +8,10 @@
     fill: #4c4c4c;
     text-align: center;
     cursor: default;
+    margin-top: 70px;
 }
-
+#bubble-description {
+}
 a,
 a:hover {
     color: #ae9a9e;
