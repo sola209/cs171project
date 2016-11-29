@@ -401,6 +401,7 @@ form {
 }
 
 #section7 p {
+    font-weight: 100;
     text-align: left;
     margin-left: 100px;
     margin-right: 100px;
@@ -408,7 +409,7 @@ form {
 }
 
 #section7 a {
-    color: #b81432;
+    color: #AB979B;
     text-decoration: none;
     font-size: 22px;
 
@@ -416,7 +417,6 @@ form {
 
 #section7 a:hover {
     color: #ffb3b3;
-
 }
 
 #section7 {
@@ -436,6 +436,7 @@ form {
     z-index:10;
     position: absolute;
 }
+
 #section6 h1 {
 
     margin: 50px 0 0 0;
@@ -443,15 +444,3 @@ form {
     text-align: left;
 }
 
-/*#imageWrapper {
-    position: relative; 
-    height: 300px;
-}
-
-#imageWrapper img {
-    position: absolute; 
-    bottom: 0;
-    left: 0;
-    height: 200px;
-    width: 100%;
-}*/
