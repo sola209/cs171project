@@ -159,9 +159,9 @@ function update_text(region){
             'are trafficked to a richer country nearby, or to a richer area within the same country. ' + '<br/>' + '' + '<br/>' +
             'In terms of the regional response to trafficking in persons, most of the countries have specific ' +
             'legislation today,' +
-            ' although for some of the countries, the legislative coverage is partial. The criminal justice ' +
+            ' although in some cases it is partial. The criminal justice ' +
             'response in the Western Hemisphere shows that among the countries considered, only the United States' +
-            ' of America and Peru reported more than 50 convictions for trafficking in persons per year.');
+            ' and Peru reported more than 50 convictions for trafficking in persons per year.');
     }
 
     if(d3.select("#attribute-type").property("value") == "asia"){
@@ -175,7 +175,7 @@ function update_text(region){
             'The number of convictions in this part of the world is higher than in other regions, ' +
             'with many countries reporting more than 50 convictions per year. However, for many countries in this ' +
             'region (22 per cent) data on convictions is not available. So, the regional average is actually ' +
-            'biased as a result of the absence of proper information on the criminal justice response');
+            'biased as a result of the absence of proper information on the criminal justice response.');
     }
 
     if(d3.select("#attribute-type").property("value") == "subsaharan_africa"){
@@ -185,10 +185,10 @@ function update_text(region){
         $("#resp").text('28.8');
         $("#desc").html('In terms of flows, domestic trafficking is the main type of trafficking in Sub-Saharan Africa. ' +
             'This type of trafficking accounts for more than three quarters of the total number of detected victims ' +
-            'in this subregion, which is a very large proportion. ' +'<br/>' + '' + '<br/>' +
-            'As reported in the global overview, the subregion of SubSaharan Africa is a part of the world ' +
-            'where the lack of legislation is a key concern. As a result of the late introduction of proper ' +
-            'legislation, most of the countries in this part of the world report very low numbers of convictions, ' +
+            'in this subregion. ' +'<br/>' + '' + '<br/>' +
+            'As described in the global overview, the key concern in the subregion of SubSaharan Africa is ' +
+            'lack of legislation. As a result of the late introduction of proper ' +
+            'legislation, most of the countries in this part of the world report very few convictions, ' +
             'and the number of countries where this information is not available or accessible is very high compared ' +
             'to the rest of the world.');
     }
@@ -213,10 +213,10 @@ function update_text(region){
         $("#desc").html('The Middle East is not only a destination for Sub-Saharan (mainly East) Africans. ' +
             'The region also experiences inbound trafficking from distant regions, especially from the region ' +
             'of South Asia, East Asia and the Pacific.' + '<br/>' + '' + '<br/>' +
-            'No country in North Africa and the Middle East had an offence that criminalized trafficking in persons ' +
-            'as of 2014. Only two countries had partial legislation (that focused on trafficking in children). ' +
-            'Information on the criminal justice response is limited. Very few countries can provide ' +
-            'data on the number of convictions, and when such figures are available, they are generally very low.');
+            'No country in North Africa and the Middle East had an offense that criminalized trafficking in persons ' +
+            'as of 2014. Only two countries had partial legislation (focused on trafficking in children). ' +
+            'Very few countries provide information about the number of convictions' +
+            ', and when such figures are available, they are generally very low.');
     }
 
 
