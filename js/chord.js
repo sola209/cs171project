@@ -25,7 +25,7 @@ var regions = [ "W. Europe", "Cen. Europe", "The Balkans", "West Africa", "South
     "North / Central America", "Sub-Saharan Africa", "North Africa & M.E.", "South Asia",
     "East Asia", "C.Asia" ];
 
-
+/*var colors = ["#760d0d", "#000000", "#4b320c", "#060f3a", "#4F54A8", "#424242"]*/
 var colors = [ "#006837","#1a9850","#a6d96a","#fdae61","#f46d43",
     "#66bd63","#a50026","#d73027","#ffffbf","#fee08b","#d9ef8b" ]
 
@@ -154,7 +154,7 @@ function update_text(region){
         $("#vuln").text('34.85');
         $("#traff").text('0.4%');
         $("#resp").text('45.3');
-        $("#desc").html('In this region, 58 percent of the relevant flows are either domestic or subregional. As a result,' +
+        $("#desc").html('In this region, 58% of the relevant flows are either domestic or subregional. As a result,' +
             'most victims from this part of the world ' +
             'are trafficked to a richer country nearby, or to a richer area within the same country. ' + '<br/>' + '' + '<br/>' +
             'In terms of the regional response to trafficking in persons, most of the countries have specific ' +
