@@ -195,7 +195,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("fill", "url(#bg)")
 		.attr("class", "enter")
         .on('mouseover', function(d) {
-        	d3.select(this).style("stroke", "#fff").style("stroke-width", "2");
+        	d3.select(this).style("stroke", "rgba(255, 255, 255, 0.47)").style("stroke-width", "2");
         })
         .on('mouseout', function(d) {
         	d3.select(this).style("stroke", "black").style("stroke-width", "0");
