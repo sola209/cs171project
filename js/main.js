@@ -43,7 +43,7 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
         });
         if ( $(this).height() < 60){
             $( this ).animate({height: "+=70"},  { duration: 200, queue: false } );
-            $( this ).html(this.id + ": " + descriptionText[this.id]);}
+            $( this ).html(descriptionText[this.id]);}
         else
         {$( this ).animate({ height: "-=70" },  { duration: 200, queue: false });
             $( this ).html(""+this.id)};
