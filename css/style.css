@@ -3,6 +3,7 @@
 body {
 
     font-family: 'Helvetica Neue', sans-serif;
+
 }
 .flow-select:hover { background-color: rgba(255, 255, 255, 0.47); }
 
@@ -354,10 +355,11 @@ td {
 #desc {
 
     margin: 50px 0 0 0;
-    color: antiquewhite;
+    color: white;
     font-size: 16px;
     width: 60%;
     font-weight: 100;
+    text-align: left;
 
 }
 
@@ -371,6 +373,7 @@ td {
 }
 
 #chorddesc {
+    margin-top: 50px;
     width: 50%;
     float: left;
 }
@@ -433,6 +436,12 @@ form {
     padding-left: 50px;
     z-index:10;
     position: absolute;
+}
+#section6 h1 {
+
+    margin: 50px 0 0 0;
+    width: 60%;
+    text-align: left;
 }
 
 /*#imageWrapper {
