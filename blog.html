@@ -107,7 +107,46 @@
 
                 <p>Data-wise, we recently discovered a UN database of legal cases in human trafficking. While the proportions of cases from country to country don't really reflect where trafficking is the most prevalent, it does provide information on the demographics of individual victims -- things like age, country of origin, gender, etc. This would be difficult to scrape and aggregate, but it's something we could look into if we have a pressing need for data on trafficking victims.
                 </p>
-            </div><!-- /.blog-post -->
+            </div>
+
+            <div class="blog-post">
+                <h2 class="blog-post-title">Prototype 2</h2>
+                <p class="blog-post-meta">November 28, 2016</p>
+                <p>Our prototype is making strong process, and we are confident that the data behind human trafficking is beginning to find a more meaningful presence on our website. At the moment, the basic structure of our website is as follows:
+                </p>
+                <ul>
+                    <li>
+                        We open with a title page and video that bring the viewer into the topic compellingly. We supplement this with a photograph depicting child labour with an introductory fact about the number of enslaved people worldwide.
+                    </li>
+                    <li>
+                        We then bring the viewer into an explanation of <strong>what human trafficking is</strong> from a definitional standpoint. In order to do this, we implement a bubble chart depicting the broad categories of sexual exploitation and labour trafficking, which encompass many more.
+                        <img src="img/bubble_v2.png" style="width:100%"/>
+                    </li>
+                    <li>Then, we demonstrate to viewers <strong>how trafficking is a global problem</strong>, through an interactive flow chart in which users can select one of 6 countries and see the trafficking flows emanate from that country on the world map.
+                        <img src="img/flow_v2.png" style="width:100%"/>
+                    </li>
+                    <li>
+                        We then take the viewer through a <strong>closer look at human trafficking victims</strong> with a world globe interface visualization. The globe cycles through various countries and shows cases of particular trafficking victims.
+                        <img src="img/globe_v2.png" alt="" style="width:100%">
+                    </li>
+                    <li>Then, we will give an overview of <strong>what governments are currently doing</strong> to prevent the spread of this issue, through a chord diagram that represents the relative flow of trafficking victims from region to region. The effectiveness of that region's governments in mitigating the trafficking crisis is encoded color-wise, with a scale at the bottom representing the average effectiveness per region. Additionally, the chord diagram is filterable by region and an information pane on the right provides a summary of trafficking flows and government responsiveness per region.
+                        <img src="img/chord_v2_1.png" alt="" style="width:100%">
+                        <img src="img/chord_v2_2.png" alt="" style="width:100%">
+
+                    </li>
+                    <li>
+                        Finally, we will include a section on <strong>what we can do</strong> to get involved in this issue. A d3 visualization may or may not be part of this section, however the call to action will be crucial in inspiring change for the viewer.
+
+                    </li>
+                </ul>
+                <p>These past two weeks were very exciting and challenging, with the logistical hurdle of Thanksgiving and the need to make visualizations more interactive and data-driven. Our most drastic decisions for the second prototype were to replace the initial tree visualization and the scatterplot with the bubble graph and chord diagram respectively. These new visualizations were challenging to implement, as they involved the creation of two JSON-formatted objects that could be easily interpreted in D3. Our next steps for the final presentation will include further refining aesthetic choices on our website as well as ensuring that the information is accurate, and well documented. Most importantly, the "call to action" feature remains a critical portion that we hope will leave our viewers inspired to act.
+                </p>
+
+                <p>Data-wise, we were able to obtain all the remaining information we needed from a United Nations Office on Drugs and Crime report entitled "Human Trafficking in Persons," last published in 2014. Although information was not readily available in tabular format, trafficking flows between regions and critical information on what governments are doing to respond to the crisis were gleaned from this report.
+                </p>
+            </div>
+
+            <!-- /.blog-post -->
             <!--
             <div class="blog-post">
                 <h2 class="blog-post-title">New feature</h2>
