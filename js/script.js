@@ -540,7 +540,7 @@ function zoomTo(d) {
 		d3.selectAll(".innerCircleTitle")
 			.style("display",  "none")
 			//If the font-size becomes to small do not show it or if the ID does not start with currentID
-			.filter(function(d) { return Math.round(d.fontTitleSize * k) > 4 & d.ID.lastIndexOf(currentID, 0) === 0; })
+			.filter(function(d) { return Math.round(d.fontTitleSize * k) > 1 & d.ID.lastIndexOf(currentID, 0) === 0; })
 			.style("display",  null)
 			.attr("y", function(d) { return d.titleHeight * 0.8*k; })
 			.style("font-size", function(d) { return Math.round(d.fontTitleSize * k)+'px'; })
@@ -674,11 +674,12 @@ function wrap(text, width) {
 		extraHeight = 0.2,
 		y = text.attr("y"),
 		dy = parseFloat(text.attr("dy")),
-		//First span is different - smaller font
+		//First span is different - larger font
 		tspan = text.text(null)
 			.append("tspan")
 			.attr("x", 0).attr("y", y)
 			.attr("dy", dy + "em");
+
 
 	while (word = words.pop()) {
 	  line.push(word);
