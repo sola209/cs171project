@@ -20,12 +20,6 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
     // var hierarchy = new Hierarchy("tree", hierarchy);
     slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
 
-
-
-
-
-
-
     var flowMap = new FlowMap("#flow", [world, nodes, flows]);
     var countryInfo =
     // Update the visualization

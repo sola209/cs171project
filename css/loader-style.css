@@ -20,7 +20,7 @@
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #e74c3c; /*#3498db;*/
+    border-top-color: #b81432; /*#3498db;*/
     -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 } 
@@ -34,7 +34,7 @@
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #e74c3c;
+    border-top-color: #b81432;
     -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
       animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -48,7 +48,7 @@
     bottom: 15px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #e74c3c; /*#f9c922;*/
+    border-top-color: #b81432; /*#f9c922;*/
     -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
       animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -65,7 +65,7 @@
 }
 
 #loading-text b {
-    color: #e74c3c;
+    color: #b81432;
 }
 
 @-webkit-keyframes spin {
