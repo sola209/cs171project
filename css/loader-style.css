@@ -34,6 +34,7 @@
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
+    /*border-top-color: #b81432;*/
     border-top-color: #fff;
     -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
       animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
