@@ -677,7 +677,7 @@ function changeLocation(d, v, k) {
 		//Hide the bar charts, then update them at once and show them again
 		d3.selectAll(".barWrapperOuter")
 			.transition().duration(1000)
-			.style("opacity",0.8);
+			.style("opacity",1);
 			
 		focus0 = focus;
 		k0 = k;
