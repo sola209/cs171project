@@ -33,19 +33,19 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
             "Indonesia": "Indonesia acts primarily as a source country. People are trafficked out of Indonesia for sexual exploitation and forced labor.",
             "India": "India mostly acts as a source country - that is, trafficking incidents tend to involve transport out of India. These cases include both sexual exploitation and forced labor.",
             "Lebanon": "Lebanon acts primarily as a source country. Trafficking cases include both sexual exploitation and forced labor.",
-            "All": ""
+            "All": "In total, 600,000 to 800,000 people are trafficked across international borders every year, of which 80% are female and half are children. Source: www.dosomething.org"
         }
         var current = this;
         $('.flow-select').each(function() {
             if ( $(this).height() > 60)
-                $( this ).animate({ height: "-=90" },  { duration: 200, queue: false });
+                $( this ).animate({ height: "-=70" },  { duration: 200, queue: false });
                 $( this ).html(""+this.id);
         });
         if ( $(this).height() < 60){
-            $( this ).animate({height: "+=90"},  { duration: 200, queue: false } );
-            $( this ).html(this.id + ": " + descriptionText[this.id]);}
+            $( this ).animate({height: "+=70"},  { duration: 200, queue: false } );
+            $( this ).html(descriptionText[this.id]);}
         else
-        {$( this ).animate({ height: "-=90" },  { duration: 200, queue: false });
+        {$( this ).animate({ height: "-=70" },  { duration: 200, queue: false });
             $( this ).html(""+this.id)};
     });
     
