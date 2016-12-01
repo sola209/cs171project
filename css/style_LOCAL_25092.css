@@ -313,7 +313,6 @@ h1 .sub-headline {
 }
 
 #barchart-selector option {
-<<<<<<< HEAD
     color: #b81432;
 }
 
@@ -328,28 +327,14 @@ h1 .sub-headline {
     text-decoration: none;
     display: inline-block;
     font-size: 13px;
-=======
-    color: #e74c3c;
-}
-
-/* Omar's Styles */
-
-#vis-area text {
-
-    font-size: 11px;
-
->>>>>>> omar_branch
 }
 
 .labels {
     fill: lightskyblue;
 }
-<<<<<<< HEAD
 #title_area {
     margin: 0 0 200px 0;
 }
-=======
->>>>>>> omar_branch
 
 #circle circle {
     fill: none;
@@ -384,7 +369,6 @@ td {
 
 #desc {
 
-<<<<<<< HEAD
     margin:20px 0 0 0;
     color: white;
     font-size: 16px;
@@ -395,14 +379,6 @@ td {
 
 #vis-area text {
     font-size: 11px;
-=======
-    margin: 50px 0 0 0;
-    color: antiquewhite;
-    font-size: 16px;
-    width: 60%;
-    font-weight: 100;
-
->>>>>>> omar_branch
 }
 
 #colorlabel {
@@ -411,10 +387,7 @@ td {
 }
 
 #chorddesc {
-<<<<<<< HEAD
     margin-top: 50px;
-=======
->>>>>>> omar_branch
     width: 50%;
     float: left;
 }
@@ -430,25 +403,16 @@ td {
 }
 
 .table {
-<<<<<<< HEAD
     margin: 10px 0 0 0;
     width: 70%;
 }
 
 form {
-=======
-    margin: 25px 0 0 0;
-    width: 60%;
-}
-
-#attribute-type {
->>>>>>> omar_branch
     margin: 25px 0 0 0;
 }
 
 #colorscale {
     margin: 25px 0 0 0;
-<<<<<<< HEAD
 }
 
 #section7 p {
@@ -497,6 +461,3 @@ form {
     text-align: left;
 }
 
-=======
-}
->>>>>>> omar_branch
