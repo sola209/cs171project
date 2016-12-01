@@ -284,7 +284,7 @@ FlowMap.prototype.updateVis = function(){
                 });
     arcSelection.on("mouseover", function(d) {
                 d3.select(this)
-                    .attr("stroke", "rgba(186, 20, 53, 0.96)")
+                    .attr("stroke", "rgba(186, 20, 53, 0.96)");
                   //  .attr("marker-end", "url(#arrowHead)");
 
             });

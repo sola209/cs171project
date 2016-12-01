@@ -80,23 +80,41 @@ function drawAll() {
 					
 					//Title inside circle
 					d3.select(this).append("text")
-						.attr("class","innerCircleTitle")
-						.attr("y", function(d, i) { 
+						.attr("class","firstCircleTitle")
+						.attr("y", function(d, i) {
 							d.titleHeight = (-1 + 0.25) * current.r;
-							return d.titleHeight; 
+							return d.titleHeight;
 						})
 						.attr("dy","0em")
 						.text(function(d,i) { return d.name})
 						.style("font-size", function(d) {
 							//Calculate best font-size
-							d.fontTitleSize = current.r / 10//this.getComputedTextLength() * 20;				
-							return Math.round(d.fontTitleSize)+"px"; 
+							d.fontTitleSize = current.r / 10//this.getComputedTextLength() * 20;
+							return Math.round(d.fontTitleSize)+"px";
 						})
-						.each(function(d) { 
-							d.textLength = current.r*2*0.7; 
-							wrap(this, d.textLength); 
+						.each(function(d) {
+							d.textLength = current.r*2*0.7;
+							wrap(this, d.textLength);
 						});
 
+					//Title inside circle
+					d3.select(this).append("text")
+						.attr("class","innerCircleTitle")
+						.attr("y", function(d, i) {
+							d.titleHeight = (-1 + 0.25) * current.r;
+							return d.titleHeight;
+						})
+						.attr("dy","0em")
+						.text(function(d,i) { return d.name})
+						.style("font-size", function(d) {
+							//Calculate best font-size
+							d.fontTitleSize = current.r / 10//this.getComputedTextLength() * 20;
+							return Math.round(d.fontTitleSize)+"px";
+						})
+						.each(function(d) {
+							d.textLength = current.r*2*0.7;
+							wrap(this, d.textLength);
+						});
 					
 					//Bar chart	wrapper			
 					var barWrapperInner = d3.select(this).selectAll(".innerBarWrapper")
@@ -130,7 +148,7 @@ function drawAll() {
 					barWrapperInner.append("text")
 						.attr("class", "innerText")
 						.attr("dx", function(d) {
-							d.dx = -current.r*0.05; 
+							d.dx = -current.r*0.05;
 							return d.dx; 
 						})
 						.attr("dy", "1.5em")
@@ -167,7 +185,7 @@ function drawAll() {
 						.style("text-anchor", function(d) { return d.valuePos === "left" ? "start" : "end"; })
 						.style("fill", function(d) { return d.valuePos === "left" ? "#333333" : "white"; }); 
 				}//if
-			});//each barWrapperOuter 
+			});//each barWrapperOuter
 	}//drawBars
 
 	////////////////////////////////////////////////////////////// 
@@ -493,7 +511,8 @@ function zoomTo(d) {
 		
 	//Remove the tspans of all the titles
 	d3.selectAll(".innerCircleTitle").selectAll("tspan").remove();
-			
+	d3.selectAll(".firstCircleTitle").selectAll("tspan").remove();
+
 	//Hide the bar charts, then update them
 	d3.selectAll(".barWrapperOuter").transition().duration(0).style("opacity",0);
 	
@@ -504,7 +523,6 @@ function zoomTo(d) {
 		.call(endall, changeReset);
 
 	function changeReset() {
-		console.log(d.name)
 		//Save the current ID of the clicked on circle
 		//If the clicked on circle is a leaf, strip off the last ID number so it becomes its parent ID
 		var currentID = (typeof IDbyName[d.name] !== "undefined" ? IDbyName[d.name] : d.ID.replace(/\.([^\.]*)$/, ""));
@@ -537,21 +555,31 @@ function zoomTo(d) {
 		////////////////////////////////////////////////////////////// 
 		
 		//The title inside the circles
+		d3.selectAll(".firstCircleTitle")
+			.style("display",  "none")
+			// Show center circle title if is in the zoomed out view
+			.filter(function(d) { return Math.round(d.fontTitleSize * k) < 25 & d.ID.lastIndexOf(currentID, 0) === 0; })
+			.style("display",  null)
+			.attr("text-anchor","middle")
+			.attr("y", function(d) { return 0; })
+			.style("font-size", function(d) { console.log(d.fontTitleSize); return Math.round(2*d.fontTitleSize * k)+'px'; })
+			.text(function(d,i) { return d.name;});
+
 		d3.selectAll(".innerCircleTitle")
 			.style("display",  "none")
-			//If the font-size becomes to small do not show it or if the ID does not start with currentID
-			.filter(function(d) { return Math.round(d.fontTitleSize * k) > 1 & d.ID.lastIndexOf(currentID, 0) === 0; })
+			// Show description text and title if it is in zoomed in view
+			.filter(function(d) { return Math.round(d.fontTitleSize * k) > 12 & d.ID.lastIndexOf(currentID, 0) === 0; })
 			.style("display",  null)
-			.attr("y", function(d) { return d.titleHeight * 0.8*k; })
+			.attr("y", function(d) { return d.titleHeight*0.8*k; })
 			.style("font-size", function(d) { return Math.round(d.fontTitleSize * k)+'px'; })
-			.text(function(d,i) { return d.name+" | "+ d.description + " || " + "Countries where it is identified in the highest"+ " || " +"percentage of U.S. TIP Reports from 2001 to 2011 ";})
+			.text(function(d,i) { return d.name+" | "+ d.description + " || " + "Found in the following countries:"})
 			.each(function(d) { wrap(this, k * d.textLength); });
-			
+
 		//Rescale the bars
 		d3.selectAll(".innerBarWrapper").selectAll(".innerBar")
 			.style("display",  "none")
 			//If the circle (i.e. height of one bar) becomes to small do not show the bar chart
-			.filter(function(d) { return Math.round(d.height * k) > 2 & d.ID.lastIndexOf(currentID, 0) === 0; })
+			.filter(function(d) { return Math.round(d.height * k) > 20 & d.ID.lastIndexOf(currentID, 0) === 0; })
 			.style("display",  null)
 			.attr("x", function(d) { return d.totalOffset * k; })
 			.attr("y", function(d) { return d.barHeight * k;})
@@ -563,7 +591,7 @@ function zoomTo(d) {
 		d3.selectAll(".innerBarWrapper").selectAll(".innerText")
 			.style("display",  "none")
 			//If the font-size becomes to small do not show it
-			.filter(function(d) { return Math.round(d.fontSize * k) > 4 & d.ID.lastIndexOf(currentID, 0) === 0; })
+			.filter(function(d) { return Math.round(d.fontSize * k) > 10 & d.ID.lastIndexOf(currentID, 0) === 0; })
 			.style("display",  null)
 			.style("font-size", function(d) { return Math.round(d.fontSize * k)+'px'; })
 			.attr("dx", function(d) { return d.dx * k; })
@@ -646,10 +674,10 @@ function changeLocation(d, v, k) {
 			.transition().duration(1000)
 			.style("opacity",1);
 			
-		//Hide the bar charts, then update them at once and show the magain	
+		//Hide the bar charts, then update them at once and show them again
 		d3.selectAll(".barWrapperOuter")
 			.transition().duration(1000)
-			.style("opacity",1);
+			.style("opacity",0.8);
 			
 		focus0 = focus;
 		k0 = k;
@@ -678,7 +706,9 @@ function wrap(text, width) {
 		tspan = text.text(null)
 			.append("tspan")
 			.attr("x", 0).attr("y", y)
-			.attr("dy", dy + "em");
+			.attr("dy", dy + "em")
+			.style("font-size", (Math.round(currentSize*2.5) <= 15 ? 0 : Math.round(currentSize*1.5))+"px")
+
 
 
 	while (word = words.pop()) {
@@ -696,7 +726,7 @@ function wrap(text, width) {
 				  .attr("x", 0)
 				  .attr("y", y)
 				  .attr("dy", ++lineNumber+4 * lineHeight + extraHeight + dy + "em")
-				  .style("font-size", (Math.round(currentSize*0.5) <= 5 ? 0 : Math.round(currentSize*0.5))+"px")
+				  .style("font-size", (Math.round(currentSize*0.5) <= 15 ? 0 : Math.round(currentSize*0.5))+"px")
 				  .style("font-style", "italic")
 		  			.text(word)
 		  }
@@ -707,7 +737,7 @@ function wrap(text, width) {
 				  .attr("x", 0).attr("y", y*0.9)
 				  .attr("dy", ++lineNumber * lineHeight + extraHeight + dy + "em")
 				  .text(word)
-				  .style("font-size", (Math.round(currentSize*0.5) <= 5 ? 0 : Math.round(currentSize*0.5))+"px");
+				  .style("font-size", (Math.round(currentSize*0.7) <= 15 ? 0 : Math.round(currentSize*0.5))+"px");
 		  }
 	  }//if
 	}//while

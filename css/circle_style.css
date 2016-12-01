@@ -193,6 +193,11 @@ a:hover {
 .innerCircleTitle {
     text-anchor: middle;
 }
+.firstCirclTitle {
+    color: rgba(230,33,23,0.2);
+    text-anchor: middle;
+
+}
 
 .subTotal {
     font-weight: 100;

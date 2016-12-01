@@ -464,6 +464,7 @@ form {
 }
 
 #section7 img {
+    margin-top: 50px;
     z-index:1;
     position: relative;
     /*height: 200px;*/
