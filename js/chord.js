@@ -26,8 +26,8 @@ var regions = [ "W. Europe", "Cen. Europe", "The Balkans", "West Africa", "South
     "East Asia", "C.Asia" ];
 
 /*var colors = ["#760d0d", "#000000", "#4b320c", "#060f3a", "#4F54A8", "#424242"]*/
-var colors = [ "#006837","#1a9850","#a6d96a","#fdae61","#f46d43",
-    "#66bd63","#a50026","#d73027","#ffffbf","#fee08b","#d9ef8b" ]
+var colors = [ "#fff7fb","#d0d1e6","#a6bddb","#297fad","#0570b0",
+    "#ece7f2","#023858","#045a8d","#3690c0","#74a9cf","#d0d1e6" ]
 
 var formatPercent = d3.format(".1%");
 
