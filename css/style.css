@@ -318,6 +318,17 @@ h1 .sub-headline {
 
 /* Omar's styles */
 
+#chord_button {
+    background-color: #4c4c4c ; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
 .labels {
     fill: lightskyblue;
 }

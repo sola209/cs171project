@@ -2,117 +2,127 @@
  * Created by omarabboud1 on 2016-11-27.
  */
 
-var width = 700,
-    height = 700,
-    outerRadius = Math.min(width, height) / 2 - 10,
-    innerRadius = outerRadius - 24;
+function initChord(){
 
-var matrix = [
-    [ 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
-    [ 14, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0 ],
-    [ 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
-    [ 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
-    [ 7, 0, 0, 0, 94, 3, 0, 1, 0, 0, 0 ],
-    [ 1, 0, 0, 0, 4, 59, 0, 1, 0, 0, 0 ],
-    [ 1, 0, 0, 0, 0, 0, 97, 10, 0, 0, 0 ],
-    [ 1, 0, 0, 0, 0, 0, 0, 31, 0, 0, 0 ],
-    [ 1, 0, 0, 0, 1, 7, 3, 18, 0, 0, 0 ],
-    [ 7, 0, 0, 0, 1, 25, 3, 33, 0, 0, 0 ],
-    [ 4, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0 ]
-];
+    var width = 700,
+        height = 700,
+        outerRadius = Math.min(width, height) / 2 - 10,
+        innerRadius = outerRadius - 24;
 
-var regions = [ "W. Europe", "Cen. Europe", "The Balkans", "West Africa", "South America",
-    "North / Central America", "Sub-Saharan Africa", "North Africa & M.E.", "South Asia",
-    "East Asia", "C.Asia" ];
+    var matrix = [
+        [ 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+        [ 14, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0 ],
+        [ 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+        [ 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+        [ 7, 0, 0, 0, 94, 3, 0, 1, 0, 0, 0 ],
+        [ 1, 0, 0, 0, 4, 59, 0, 1, 0, 0, 0 ],
+        [ 1, 0, 0, 0, 0, 0, 97, 10, 0, 0, 0 ],
+        [ 1, 0, 0, 0, 0, 0, 0, 31, 0, 0, 0 ],
+        [ 1, 0, 0, 0, 1, 7, 3, 18, 0, 0, 0 ],
+        [ 7, 0, 0, 0, 1, 25, 3, 33, 0, 0, 0 ],
+        [ 4, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0 ]
+    ];
 
-/*var colors = ["#760d0d", "#000000", "#4b320c", "#060f3a", "#4F54A8", "#424242"]*/
-var colors = [ "#fff7fb","#d0d1e6","#a6bddb","#297fad","#0570b0",
-    "#ece7f2","#023858","#045a8d","#3690c0","#74a9cf","#d0d1e6" ]
+    var regions = [ "W. Europe", "Cen. Europe", "The Balkans", "West Africa", "South America",
+        "North / Central America", "Sub-Saharan Africa", "North Africa & M.E.", "South Asia",
+        "East Asia", "C.Asia" ];
 
-var formatPercent = d3.format(".1%");
+    /*var colors = ["#760d0d", "#000000", "#4b320c", "#060f3a", "#4F54A8", "#424242"]*/
+    var colors = [ "#fff7fb","#d0d1e6","#a6bddb","#297fad","#0570b0",
+        "#ece7f2","#023858","#045a8d","#3690c0","#74a9cf","#d0d1e6" ]
 
-var arc = d3.svg.arc()
-    .innerRadius(innerRadius)
-    .outerRadius(outerRadius);
+    var formatPercent = d3.format(".1%");
 
-var layout = d3.layout.chord()
-    .padding(.04)
-    .sortSubgroups(d3.descending)
-    .sortChords(d3.ascending);
+    var arc = d3.svg.arc()
+        .innerRadius(innerRadius)
+        .outerRadius(outerRadius);
 
-var path = d3.svg.chord()
-    .radius(innerRadius);
+    var layout = d3.layout.chord()
+        .padding(.04)
+        .sortSubgroups(d3.descending)
+        .sortChords(d3.ascending);
 
-var svg = d3.select("#container").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g")
-    .attr("id", "circle")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    var path = d3.svg.chord()
+        .radius(innerRadius);
 
-svg.append("circle")
-    .attr("r", outerRadius);
+    var svg = d3.select("#container").append("svg")
+        .attr("id","chordsvg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("id", "circle")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
+    svg.append("circle")
+        .attr("r", outerRadius);
 
-// Compute the chord layout.
-layout.matrix(matrix);
+    // Compute the chord layout.
+    layout.matrix(matrix);
 
-// Add a group per neighborhood.
-var group = svg.selectAll(".group")
-    .data(layout.groups)
-    .enter().append("g")
-    .attr("class", "group")
-    .on("mouseover", mouseover);
+    // Add a group per neighborhood.
+    var group = svg.selectAll(".group")
+        .data(layout.groups)
+        .enter().append("g")
+        .attr("class", "group")
+        .on("mouseover", mouseover);
 
-// Add a mouseover title.
-group.append("title").text(function(d, i) {
-    return regions[i] + ": " + formatPercent(d.value) + " of origins";
-});
-
-// Add the group arc.
-var groupPath = group.append("path")
-    .attr("id", function(d, i) { return "group" + i; })
-    .attr("d", arc)
-    .style("fill", function(d, i) { return colors[i]; });
-
-// Add a text label.
-var groupText = group.append("text")
-    .attr("x", 6)
-    .attr("dy", 15);
-
-groupText.append("textPath")
-    .attr("xlink:href", function(d, i) { return "#group" + i; })
-    .text(function(d, i) { return regions[i]; });
-
-// Remove the labels that don't fit. :(
-groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
-    .remove();
-
-// Add the chords.
-var chord = svg.selectAll(".chord")
-    .data(layout.chords)
-    .enter().append("path")
-    .attr("class", "chord")
-    .style("fill", function(d) { return colors[d.source.index]; })
-    .attr("d", path);
-
-// Add an elaborate mouseover title for each chord.
-chord.append("title").text(function(d) {
-    return regions[d.source.index]
-        + " → " + regions[d.target.index]
-        + ": " + formatPercent(d.source.value)
-        + "\n" + regions[d.target.index]
-        + " → " + regions[d.source.index]
-        + ": " + formatPercent(d.target.value);
-});
-
-
-function mouseover(d, i) {
-    chord.classed("fade", function(p) {
-
-        return p.source.index != i
-            && p.target.index != i;
+    // Add a mouseover title.
+    group.append("title").text(function(d, i) {
+        return regions[i] + ": " + formatPercent(d.value) + " of origins";
     });
+
+    // Add the group arc.
+    var groupPath = group.append("path")
+        .attr("id", function(d, i) { return "group" + i; })
+        .attr("d", arc)
+        .style("fill", function(d, i) { return colors[i]; });
+
+    // Add a text label.
+    var groupText = group.append("text")
+        .attr("x", 6)
+        .attr("dy", 15);
+
+    groupText.append("textPath")
+        .attr("xlink:href", function(d, i) { return "#group" + i; })
+        .text(function(d, i) { return regions[i]; });
+
+    // Remove the labels that don't fit. :(
+    groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
+        .remove();
+
+    // Add the chords.
+    var chord = svg.selectAll(".chord")
+        .data(layout.chords)
+        .enter().append("path")
+        .attr("class", "chord")
+        .style("fill", function(d) { return colors[d.source.index]; })
+        .attr("d", path);
+
+    // Add an elaborate mouseover title for each chord.
+    chord.append("title").text(function(d) {
+        return regions[d.source.index]
+            + " → " + regions[d.target.index]
+            + ": " + formatPercent(d.source.value)
+            + "\n" + regions[d.target.index]
+            + " → " + regions[d.source.index]
+            + ": " + formatPercent(d.target.value);
+    });
+
+    function mouseover(d, i) {
+        chord.classed("fade", function(p) {
+
+            return p.source.index != i
+                && p.target.index != i;
+        });
+    }
+}
+
+
+initChord();
+
+function updateChord() {
+    d3.select("#chordsvg").remove();
+    initChord();
 }
 
 function update_text(region){

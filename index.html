@@ -152,6 +152,77 @@
     </div>
   </div>
 
+  <div class="section" id="section6">
+
+    <div id="vis-area">
+
+      <div id="container">
+
+      </div>
+      <div id = "chorddesc">
+
+        <center><h1>Trafficking: A Regional View</h1>
+
+          <form class="form-inline">
+            <div class="form-group">
+              <select class="form-control" id="attribute-type" onchange = "update_text()">
+                <option value="global">Global</option>
+                <option value="europe">Europe</option>
+                <option value="americas">Americas</option>
+                <option value="asia">Asia</option>
+                <option value="subsaharan_africa">Sub-Saharan Africa</option>
+                <option value="russia_eurasia">Russia & Eurasia</option>
+                <option value="middle_east">Middle East</option>
+              </select>
+            </div>
+          </form>
+
+          <table class="table">
+            <tbody>
+            <tr>
+              <td>Number of Nations</td>
+              <td id="numnations">168</td>
+            </tr>
+            <tr>
+              <td>Mean Vulnerability (/100)</td>
+              <td id="vuln">38.7</td>
+            </tr>
+            <tr>
+              <td>Mean Trafficking (% of Pop.)</td>
+              <td id="traff">0.54%</td>
+            </tr>
+            <tr>
+              <td>Mean Government Responsiveness (/100)</td>
+              <td id="resp">39.7</td>
+            </tr>
+            </tbody>
+          </table>
+
+          <p id = "desc">
+
+            The crime of trafficking in persons affects virtually every
+            country in every region of the world. Between 2010 and
+            2012, victims with 152 different citizenships were identified
+            in 124 countries across the globe.<br/> <br/>
+
+            Transregional trafficking flows are mainly detected in the
+            rich countries of the Middle East, Western Europe and
+            North America. These flows often involve victims from
+            the ‘global south’; mainly East and South Asia and SubSaharan
+            Africa.
+
+          </p>
+          <div style="width: 100%"><button type="button" onclick="updateChord()" id="chord_button">Reset Chord Diagram</button></div>
+          <img id="colorscale" src="img/colorscale.png" style="width: 30%"/>
+
+          <p id = "colorlabel">More Responsive &#160 &#160 &#160 &#160 &#160 &#160 &#160 Less Responsive</p>
+
+        </center>
+
+      </div>
+    </div>
+
+  </div>
 
   <div class="section" id="section4">
     <h1>How Severe is the Problem?</h1>
@@ -278,78 +349,6 @@
 
 
 
-
-  </div>
-
-  <div class="section" id="section6">
-
-      <div id="vis-area">
-
-          <div id="container">
-
-          </div>
-          <div id = "chorddesc">
-
-              <center><h1>How are Governments Responding?</h1>
-
-                  <form class="form-inline">
-                      <div class="form-group">
-                          <select class="form-control" id="attribute-type" onchange = "update_text()">
-                              <option value="global">Global</option>
-                              <option value="europe">Europe</option>
-                              <option value="americas">Americas</option>
-                              <option value="asia">Asia</option>
-                              <option value="subsaharan_africa">Sub-Saharan Africa</option>
-                              <option value="russia_eurasia">Russia & Eurasia</option>
-                              <option value="middle_east">Middle East</option>
-                          </select>
-                      </div>
-                  </form>
-
-                  <table class="table">
-                      <tbody>
-                      <tr>
-                          <td>Number of Nations</td>
-                          <td id="numnations">168</td>
-                      </tr>
-                      <tr>
-                          <td>Mean Vulnerability (/100)</td>
-                          <td id="vuln">38.7</td>
-                      </tr>
-                      <tr>
-                          <td>Mean Trafficking (% of Pop.)</td>
-                          <td id="traff">0.54%</td>
-                      </tr>
-                      <tr>
-                          <td>Mean Government Responsiveness (/100)</td>
-                          <td id="resp">39.7</td>
-                      </tr>
-                      </tbody>
-                  </table>
-
-                  <p id = "desc">
-
-                      The crime of trafficking in persons affects virtually every
-                      country in every region of the world. Between 2010 and
-                      2012, victims with 152 different citizenships were identified
-                      in 124 countries across the globe.<br/> <br/>
-
-                      Transregional trafficking flows are mainly detected in the
-                      rich countries of the Middle East, Western Europe and
-                      North America. These flows often involve victims from
-                      the ‘global south’; mainly East and South Asia and SubSaharan
-                      Africa.
-
-                  </p>
-
-                  <img id="colorscale" src="img/colorscale.png"/>
-
-                  <p id = "colorlabel">More Responsive &#160 &#160 &#160 &#160 &#160 &#160 &#160 Less Responsive</p>
-
-              </center>
-
-          </div>
-      </div>
 
   </div>
 
