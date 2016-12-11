@@ -168,7 +168,7 @@ function drawAll() {
 							d.fontSizeValue = current.r / 22;				
 							return Math.round(d.fontSizeValue)+"px"; 
 						})
-						.text(function(d,i) { return commaFormat(d.value) +  "%"; })
+						.text(function(d,i) { return commaFormat(d.value); })
 						.each(function(d) {
 							d.valueWidth = this.getBBox().width;
 						 })
@@ -576,7 +576,7 @@ function zoomTo(d) {
 			.style("display",  null)
 			.attr("y", function(d) { return d.titleHeight*0.8*k; })
 			.style("font-size", function(d) { return Math.round(d.fontTitleSize * k)+'px'; })
-			.text(function(d,i) { return d.name+" | "+ d.description + " || " + "Found in the following countries:"})
+			.text(function(d,i) { return d.name+" | "+ d.description + " || " + "Found in the following countries (severity index shown below):"})
 			.each(function(d) { wrap(this, k * d.textLength); });
 
 		//Rescale the bars
