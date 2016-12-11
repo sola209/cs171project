@@ -392,7 +392,7 @@ function drawAll() {
 				.attr("class", function(d,i) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
 				.style("fill", function(d) { return d.children ? colorCircle(d.depth) : "null"; })
 				.style("stroke", function(d) {
-					console.log(d.depth<1);
+					//console.log(d.depth<1);
 					if (d.depth<1) {return "#282828"}
 					else {return "null"}})
 				.attr("r", function(d) {
@@ -566,13 +566,13 @@ function zoomTo(d) {
 			.style("display",  null)
 			.attr("text-anchor","middle")
 			.attr("y", function(d) { return 0; })
-			.style("font-size", function(d) { console.log(d.fontTitleSize); return Math.round(2*d.fontTitleSize * k)+'px'; })
+			.style("font-size", function(d) { return Math.round(2*d.fontTitleSize * k)+'px'; })
 			.text(function(d,i) { return d.name;});
 
 		d3.selectAll(".innerCircleTitle")
 			.style("display",  "none")
 			// Show description text and title if it is in zoomed in view. It will definitely be more than 25 if it's zoomed in.
-			.filter(function(d) { console.log(Math.round(d.fontTitleSize * k)); return Math.round(d.fontTitleSize * k) > 25 & d.ID.lastIndexOf(currentID, 0) === 0; })
+			.filter(function(d) { return Math.round(d.fontTitleSize * k) > 25 & d.ID.lastIndexOf(currentID, 0) === 0; })
 			.style("display",  null)
 			.attr("y", function(d) { return d.titleHeight*0.8*k; })
 			.style("font-size", function(d) { return Math.round(d.fontTitleSize * k)+'px'; })
