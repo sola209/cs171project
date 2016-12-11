@@ -27,8 +27,8 @@ function initChord(){
         "East Asia", "C.Asia" ];
 
     /*var colors = ["#760d0d", "#000000", "#4b320c", "#060f3a", "#4F54A8", "#424242"]*/
-    var colors = [ "#edf1f3","#cad5dd","#b9c8d2","#7391a6","#62839b",
-        "#dce3e8","#385264","#517690","#859fb1","#96acbc","#a8bac7" ]
+    var colors = [ "#f2ecec","#ddcaca","#dbc5c5","#9b6262","#a67272",
+        "#e8dcdc","#643838","#905151","#b18585","#ccabab","#dbbaba" ]
 
     var formatPercent = d3.format(".1%");
 
