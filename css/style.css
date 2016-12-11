@@ -327,6 +327,7 @@ h1 .sub-headline {
     text-decoration: none;
     display: inline-block;
     font-size: 13px;
+    vertical-align: middle;
 }
 
 /* Omar's Styles */
@@ -398,8 +399,15 @@ td {
 }
 
 #colorlabel {
-
     color: antiquewhite;
+}
+
+#chord_button_container {
+    vertical-align: middle;
+}
+
+#button_wrapper {
+    vertical-align: middle;
 }
 
 #chorddesc {
@@ -437,6 +445,11 @@ form {
 #colorscale {
     margin: 25px 0 0 0;
 
+}
+
+#scale_container {
+    display: inline-block;
+    width: 50%;
 }
 
 #section7 p {
@@ -487,4 +500,3 @@ form {
 }
 
 
-}

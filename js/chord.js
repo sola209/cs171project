@@ -3,8 +3,8 @@
  */
 function initChord(){
 
-    var width = 700,
-        height = 700,
+    var width = 600,
+        height = 600,
         outerRadius = Math.min(width, height) / 2 - 10,
         innerRadius = outerRadius - 24;
 
@@ -44,7 +44,7 @@ function initChord(){
     var path = d3.svg.chord()
         .radius(innerRadius);
 
-    var svg = d3.select("#container").append("svg")
+    var svg = d3.select("#container2").append("svg")
         .attr("id","chordsvg")
         .attr("width", width)
         .attr("height", height)
@@ -109,7 +109,7 @@ function initChord(){
 
     function mouseover(d, i) {
         chord.classed("fade", function(p) {
-
+            update_text2(i);
             return p.source.index != i
                 && p.target.index != i;
         });
@@ -124,7 +124,7 @@ function updateChord() {
     initChord();
 }
 
-function update_text(region){
+/*function update_text(region){
 
     if(d3.select("#attribute-type").property("value") == "global"){
         $("#numnations").text('168');
@@ -229,9 +229,101 @@ function update_text(region){
 
     }
 
+}*/
+
+function update_text2(i){
+
+
+    if(i == 2 || i == 0){
+        $("#numnations").text('37');
+        $("#vuln").text('27.1');
+        $("#traff").text('0.2%');
+        $("#resp").text('54.2');
+        $("#desc").html('Western and Central Europe is a region that is both an '+
+            'origin and a destination for trafficking in persons. Countries '+
+            'in Central Europe and the Balkans are mainly origin '+
+            'areas for cross-border trafficking into the rest of Europe. '+
+            'These countries also detect significant levels of domestic trafficking.'+
+            '<br/>'+''+'<br/>'+'In terms of legislation, all the countries in Western and ' +
+            'Central Europe considered in this Report have national ' +
+            'legislation that is in line with the UN Trafficking in Persons Protocol today. ');
+    }
+
+    if(i == 5 || i == 4){
+        $("#numnations").text('27');
+        $("#vuln").text('34.85');
+        $("#traff").text('0.4%');
+        $("#resp").text('45.3');
+        $("#desc").html('In this region, 58 percent of the relevant flows are either domestic or subregional. As a result,' +
+            'most victims from this part of the world ' +
+            'are trafficked to a richer country nearby, or to a richer area within the same country. ' + '<br/>' + '' + '<br/>' +
+            'In terms of the regional response to trafficking in persons, most of the countries have specific ' +
+            'legislation today,' +
+            ' although in some cases it is partial. The criminal justice ' +
+            'response in the Western Hemisphere shows that among the countries considered, only the United States' +
+            ' and Peru reported more than 50 convictions for trafficking in persons per year.');
+    }
+
+    if(i == 9 || i == 8){
+        $("#numnations").text('27');
+        $("#vuln").text('40.22');
+        $("#traff").text('0.7%');
+        $("#resp").text('35.6');
+        $("#desc").html('The main destinations for victims from the subregion of East Asia and the Pacific ' +
+            '(outside the subregion) are North America and the Middle East, and to a lesser extent Western Europe.'
+            + '<br/>' + '' + '<br/>' +
+            'The number of convictions in this part of the world is higher than in other regions, ' +
+            'with many countries reporting more than 50 convictions per year. However, for many countries in this ' +
+            'region (22 per cent) data on convictions is not available. So, the regional average is actually ' +
+            'biased as a result of the absence of proper information on the criminal justice response');
+    }
+
+    if(i == 3 || i == 6){
+        $("#numnations").text('46');
+        $("#vuln").text('47.3');
+        $("#traff").text('0.6%');
+        $("#resp").text('28.8');
+        $("#desc").html('In terms of flows, domestic trafficking is the main type of trafficking in Sub-Saharan Africa. ' +
+            'This type of trafficking accounts for more than three quarters of the total number of detected victims ' +
+            'in this subregion. ' +'<br/>' + '' + '<br/>' +
+            'As described in the global overview, the key concern in the subregion of SubSaharan Africa is ' +
+            'lack of legislation. As a result of the late introduction of proper ' +
+            'legislation, most of the countries in this part of the world report very few convictions, ' +
+            'and the number of countries where this information is not available or accessible is very high compared ' +
+            'to the rest of the world.');
+    }
+
+    if(i == 10){
+        $("#numnations").text('12');
+        $("#vuln").text('37.0');
+        $("#traff").text('0.8%');
+        $("#resp").text('39.4');
+        $("#desc").html('Trafficking for sexual exploitation is the major detected form of trafficking in persons ' +
+            'in Central Asia. More than 65 per cent of the victims detected in this region are trafficked for ' +
+            'sexual exploitation.' + '<br/>' + '' + '<br/>' + 'Most of the countries in Eastern Europe and ' +
+            'Central Asia reported having between 10 and 50 convictions for trafficking in persons per year. ' +
+            'For two countries in this subregion, however, this information was not available.');
+    }
+
+    if(i == 7){
+        $("#numnations").text('18');
+        $("#vuln").text('45.0');
+        $("#traff").text('0.7%');
+        $("#resp").text('33.3');
+        $("#desc").html('The Middle East is not only a destination for Sub-Saharan (mainly East) Africans. ' +
+            'The region also experiences inbound trafficking from distant regions, especially from the region ' +
+            'of South Asia, East Asia and the Pacific.' + '<br/>' + '' + '<br/>' +
+            'No country in North Africa and the Middle East had an offense that criminalized trafficking in persons ' +
+            'as of 2014. Only two countries had partial legislation (focused on trafficking in children). ' +
+            'Very few countries provide information about the number of convictions' +
+            ', and when such figures are available, they are generally very low.');
+
+    }
+
 
 
 
 
 
 }
+

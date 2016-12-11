@@ -157,13 +157,19 @@
     <div id="vis-area">
 
       <div id="container">
+        <div style = "width: 100%; height: 25px"></div>
+        <div id="container2"></div>
+        <div style = "width: 100%; height: 25px"></div>
+        <div id="chord_button_container" class="col-md-6" style="height: 90px"><div id = "button_wrapper" style="display: inline-block"><button type="button" onclick="updateChord()" id="chord_button">Reset Chord Diagram</button></div></div>
+        <div class="col-md-6" style="height: 90px"><img id="colorscale" src="img/colorscale2.png" style="width: 30%"/>
+          <p id = "colorlabel">More Responsive &#160 &#160 &#160 &#160 &#160 &#160 &#160 Less Responsive</p></div>
 
       </div>
       <div id = "chorddesc">
-
+        <div style = "width: 100%; height: 50px"></div>
         <center><h1>Trafficking: A Regional View</h1>
 
-          <form class="form-inline">
+          <!--<form class="form-inline">
             <div class="form-group">
               <select class="form-control" id="attribute-type" onchange = "update_text()">
                 <option value="global">Global</option>
@@ -175,7 +181,7 @@
                 <option value="middle_east">Middle East</option>
               </select>
             </div>
-          </form>
+          </form>-->
 
           <table class="table">
             <tbody>
@@ -212,10 +218,7 @@
             Africa.
 
           </p>
-          <div style="width: 100%"><button type="button" onclick="updateChord()" id="chord_button">Reset Chord Diagram</button></div>
-          <img id="colorscale" src="img/colorscale2.png" style="width: 30%"/>
 
-          <p id = "colorlabel">More Responsive &#160 &#160 &#160 &#160 &#160 &#160 &#160 Less Responsive</p>
 
         </center>
 
