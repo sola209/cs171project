@@ -193,8 +193,7 @@ a:hover {
 .innerCircleTitle {
     text-anchor: middle;
 }
-.firstCirclTitle {
-    color: rgba(230,33,23,0.2);
+.firstCircleTitle {
     text-anchor: middle;
 
 }
@@ -211,4 +210,6 @@ a:hover {
 
 .innerValue {
     /*font-weight: 700;*/
+}
+#nodeCircle.node {
 }

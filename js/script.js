@@ -40,7 +40,7 @@ function drawAll() {
 
 	var colorCircle = d3.scale.ordinal()
 			.domain([0,1,2,3])
-			.range(['rgba(191, 191, 191, 0.8)','#838383','#4c4c4c','#1c1c1c']);
+			.range(['#3f3f3f','#838383','#4c4c4c','#1c1c1c']);
 			
 	var colorBar = d3.scale.ordinal()
 			.domain(["16 to 19","20 to 24","25 to 34","35 to 44","45 to 54","55 to 64"])
@@ -391,7 +391,11 @@ function drawAll() {
 				.attr("id", "nodeCircle")
 				.attr("class", function(d,i) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
 				.style("fill", function(d) { return d.children ? colorCircle(d.depth) : "null"; })
-				.attr("r", function(d) { 
+				.style("stroke", function(d) {
+					console.log(d.depth<1);
+					if (d.depth<1) {return "#282828"}
+					else {return "null"}})
+				.attr("r", function(d) {
 					if(d.ID === "1.1.1") scaleFactor = d.value/(d.r*d.r);
 					return d.r; 
 				})
@@ -557,7 +561,7 @@ function zoomTo(d) {
 		//The title inside the circles
 		d3.selectAll(".firstCircleTitle")
 			.style("display",  "none")
-			// Show center circle title if is in the zoomed out view
+			// Show center circle title if is in the zoomed out or middle view
 			.filter(function(d) { return Math.round(d.fontTitleSize * k) < 25 & d.ID.lastIndexOf(currentID, 0) === 0; })
 			.style("display",  null)
 			.attr("text-anchor","middle")
@@ -567,8 +571,8 @@ function zoomTo(d) {
 
 		d3.selectAll(".innerCircleTitle")
 			.style("display",  "none")
-			// Show description text and title if it is in zoomed in view
-			.filter(function(d) { return Math.round(d.fontTitleSize * k) > 12 & d.ID.lastIndexOf(currentID, 0) === 0; })
+			// Show description text and title if it is in zoomed in view. It will definitely be more than 25 if it's zoomed in.
+			.filter(function(d) { console.log(Math.round(d.fontTitleSize * k)); return Math.round(d.fontTitleSize * k) > 25 & d.ID.lastIndexOf(currentID, 0) === 0; })
 			.style("display",  null)
 			.attr("y", function(d) { return d.titleHeight*0.8*k; })
 			.style("font-size", function(d) { return Math.round(d.fontTitleSize * k)+'px'; })
