@@ -347,7 +347,17 @@ h1 .sub-headline {
     vertical-align: middle;
 }
 
+.highlight {
+    color: #ccabab;
+}
+
 /* Omar's Styles */
+
+.chord_description {
+    width: 75%;
+    text-align: left;
+
+}
 
 #vis-area text {
 
@@ -394,7 +404,7 @@ h3 {
 }
 
 td {
-    color: lightsteelblue;
+    color: #ccabab;
 }
 
 
@@ -479,7 +489,7 @@ form {
 }
 
 #section7 a {
-    color: rgba(174, 128, 119, 0.87)
+    color: rgba(174, 128, 119, 0.87);
     /*color: #AB979B;*/
     text-decoration: none;
     font-size: 22px;
