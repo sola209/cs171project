@@ -12,6 +12,14 @@ body {
     /*fill: #ccc;*/
     stroke: rgba(247, 249, 253, 0.1);
 }
+.source {
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: right;
+    color: white;
+    margin-top:200px;
+    margin-right: 30px;
+}
 #infoVideo {
     position: absolute;
     right: 0;
