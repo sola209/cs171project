@@ -24,7 +24,11 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
     var countryInfo =
     // Update the visualization
     $( '.flow-select' ).mouseenter( function(){
-        flowMap.wrangleData(this.id)} );
+        $('.flow-select').css('background-color', '#4c4c4c');
+        $(this).css('background-color', 'rgba(255, 255, 255, 0.47)');
+        flowMap.wrangleData(this.id)
+
+    } );
 
     $(".flow-select").click(function(){
         descriptionText = {

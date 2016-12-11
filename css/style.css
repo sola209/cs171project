@@ -5,7 +5,7 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
 
 }
-.flow-select:hover { background-color: rgba(255, 255, 255, 0.47); }
+/*.flow-select:hover { background-color: rgba(255, 255, 255, 0.47); }*/
 
 #countries path {
     fill: rgba(255, 255, 255, 0.06);
@@ -56,7 +56,10 @@ body {
     margin-top: 10px;
 }
 .flow-select {
-    border: solid 1px rgba(255, 255, 255, 0.38);
+    background-color: #4c4c4c ; /* Green */
+    border: none;
+    color: white;
+    /*border: solid 1px rgba(255, 255, 255, 0.38);*/
     padding: 10px 10px 10px 10px;
     text-align: left;
     margin-top: 10px;

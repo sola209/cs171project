@@ -218,9 +218,11 @@ FlowMap.prototype.updateVis = function(){
                 .attr("markerWidth", 4*6)
                 .attr("markerHeight", 3*6)
                 .append("polyline")
-                .attr("points", "2,0 13,5 2,10 3,5")
-                .attr("fill", '#919191')
-            //.attr("opacity", 0.5)
+                .attr("points", "2,0 15,5 2,10 3,5")
+                .attr("fill", '#762a23')
+                .attr("opacity", 0.95)
+            //.attr("fill", '#919191')
+
             ;
 
 
@@ -284,7 +286,7 @@ FlowMap.prototype.updateVis = function(){
                 });
     arcSelection.on("mouseover", function(d) {
                 d3.select(this)
-                    .attr("stroke", "rgba(186, 20, 53, 0.96)");
+                    .attr("stroke", "#762a23");
                   //  .attr("marker-end", "url(#arrowHead)");
 
             });
