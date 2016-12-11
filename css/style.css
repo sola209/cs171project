@@ -474,7 +474,8 @@ form {
 }
 
 #section7 a {
-    color: #AB979B;
+    color: rgba(174, 128, 119, 0.87)
+    /*color: #AB979B;*/
     text-decoration: none;
     font-size: 22px;
 

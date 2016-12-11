@@ -15,7 +15,9 @@
 }
 a,
 a:hover {
-    color: #ae9a9e;
+    /*color: #ae9a9e;*/
+    color: rgba(174, 128, 119, 0.87)
+    /*color: #762a23*/
 }
 
 .title {

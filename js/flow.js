@@ -219,7 +219,7 @@ FlowMap.prototype.updateVis = function(){
                 .attr("markerHeight", 3*6)
                 .append("polyline")
                 .attr("points", "2,0 15,5 2,10 3,5")
-                .attr("fill", '#762a23')
+                .attr("fill", '#982a23')
                 .attr("opacity", 0.95)
             //.attr("fill", '#919191')
 
