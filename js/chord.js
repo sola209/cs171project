@@ -27,8 +27,8 @@ function initChord(){
         "East Asia", "C.Asia" ];
 
     /*var colors = ["#760d0d", "#000000", "#4b320c", "#060f3a", "#4F54A8", "#424242"]*/
-    var colors = [ "#f2ecec","#ddcaca","#dbc5c5","#9b6262","#a67272",
-        "#e8dcdc","#643838","#905151","#b18585","#ccabab","#dbbaba" ]
+    var colors = [ "#f2ecec","#D9C5C4","#CDB1B0","#9B6460","#8F504C",
+        "#E5D8D8","#772A24","#833D38","#A87774","#B48B88","#C09E9C" ]
 
     var formatPercent = d3.format(".1%");
 
@@ -122,6 +122,19 @@ initChord();
 function updateChord() {
     d3.select("#chordsvg").remove();
     initChord();
+    $("#numnations").text('168');
+    $("#vuln").text('38.7');
+    $("#traff").text('0.54%');
+    $("#resp").text('39.7');
+    $("#desc").html('The crime of trafficking in persons affects virtually every' +
+    'country in every region of the world. Between 2010 and ' +
+    '2012, victims with 152 different citizenships were identified '+
+    'in 124 countries across the globe.' +'<br/>' + '<br/> ' +
+    'Transregional trafficking flows are mainly detected in the ' +
+    'rich countries of the Middle East, Western Europe and ' +
+    'North America. These flows often involve victims from ' +
+    "the ‘global south’; mainly East and South Asia and SubSaharan " +
+    'Africa.');
 }
 
 /*function update_text(region){
