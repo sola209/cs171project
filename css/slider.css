@@ -83,11 +83,22 @@ input[type=range]:focus::-moz-range-thumb {
 }
 
 #slider-info {
-	padding-top: 30px;
+	padding-top: 50px;
+	padding-right: 50px;
+	font-size:20px;
 }
 
+#slider-legend{
+	background-color: #4c4c4c;
+	padding: 20px 20px 20px 20px;
+}
+#percent-text {
+	color: #762a23;
+	text-align: center;
+	font-size: 28px;
+}
 #percent {
 	color: #762a23;
 	text-align: center;
-	font-size: 44px;
+	font-size: 28px;
 }
