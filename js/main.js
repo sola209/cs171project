@@ -19,7 +19,6 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
     globeSpin = new GlobeSpin(world, globeData, "#globe-area");
     // var hierarchy = new Hierarchy("tree", hierarchy);
     slaveryBarChart = new SlaveryBarChart("slavery-barchart", gsi);
-
     var flowMap = new FlowMap("#flow", [world, nodes, flows]);
     var countryInfo =
     // Update the visualization
@@ -60,7 +59,16 @@ function ready(error, world, globeData, gsi, hierarchy, nodes, flows) {
 
 }
 
+function moveDivisor() {
+    var divisor = document.getElementById("divisor");
+    var slider = document.getElementById("slider");
+    var percent = document.getElementById("percent");
 
+    divisor.style.width = slider.value+"%";
+    percent.innerHTML = slider.value+"%";
+
+    slaveryBarChart.wrangleData();
+}
 
 function nextSpin() {
     globeSpin.updateVis();

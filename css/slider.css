@@ -1,0 +1,93 @@
+div#comparison { 
+	display: block;
+	margin: auto;
+	width: 100%;
+	width: 80vw;
+	height: 80vw;
+	max-width: 800px;
+	max-height: 100px;
+	/*overflow: hidden; */
+}
+div#comparison figure { 
+	background-image: url('../img/red.png');
+	background-size: cover;
+	font-size: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0; 
+}
+div#comparison figure > img {
+	position: relative;
+	width: 100%;
+}
+div#comparison figure div { 
+	background-image: url('../img/black.png');
+	background-size: cover;
+	/*position: absolute;*/
+	width: 50%; 
+	/*box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);*/
+	overflow: hidden;
+	bottom: 0; 
+	height: 100%;
+}
+
+input[type=range]{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	position: relative;
+	top: -11.5rem; left: 0%;
+	background-color: rgba(63,63,63,0.1);
+	width: 100%; 
+}
+input[type=range]:focus { 
+	outline: none;
+}
+input[type=range]:active {
+	outline: none;
+}
+/*input[type=range]::-moz-range-track {
+	-moz-appearance:none;
+	height:15px;
+	width: 98%;
+	background-color: rgba(255,255,255,0.1); 
+	position: relative;
+	outline: none;    
+}*/
+input[type=range]::active {
+	border: none;
+	outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance:none;
+	width: 5px;
+	height: 120px;
+	background: #666;
+	border-radius: 0 0 0 0;
+}
+input[type=range]::-moz-range-thumb {
+	-moz-appearance: none;
+	width: 5px;
+	height: 120px;
+	background: #666;
+	border-radius: 0 0 0 0;
+}   
+input[type=range]:focus::-webkit-slider-thumb {
+	background: #666;
+}
+input[type=range]:focus::-moz-range-thumb {
+	background: #666;
+}
+
+.section4-spacer {
+	height: 50px;
+}
+
+#slider-info {
+	padding-top: 30px;
+}
+
+#percent {
+	color: rgba(184, 20, 47, 1.0);
+	text-align: center;
+	font-size: 44px;
+}
