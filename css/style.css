@@ -7,7 +7,7 @@ body {
 }
 /*.flow-select:hover { background-color: rgba(255, 255, 255, 0.47); }*/
 
-#countries path {
+#countries1 path {
     fill: rgba(255, 255, 255, 0.06);
     /*fill: #ccc;*/
     stroke: rgba(247, 249, 253, 0.1);

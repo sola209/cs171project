@@ -1,6 +1,7 @@
 div#comparison { 
 	display: block;
 	margin: auto;
+	margin-top: 50px;
 	width: 100%;
 	width: 70vw;
 	height: 70vw;
@@ -83,13 +84,13 @@ input[type=range]:focus::-moz-range-thumb {
 }
 
 #slider-info {
-	padding-top: 50px;
-	padding-right: 50px;
-	font-size:20px;
+	padding-top: 30px;
+	padding-right: 80px;
+	font-size:18px;
 }
 
 #slider-legend{
-	background-color: #4c4c4c;
+	background-color: #535353;
 	padding: 20px 20px 20px 20px;
 }
 #percent-text {

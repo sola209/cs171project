@@ -78,7 +78,7 @@ FlowMap.prototype.initVis = function(){
         .attr("width", vis.w + vis.margin.right + vis.margin.left)
         .attr("height", vis.h + vis.margin.top + vis.margin.bottom);
 
-    vis.country_paths = vis.svg.append("g").attr("id", "countries");
+    vis.country_paths = vis.svg.append("g").attr("id", "countries1");
     vis.centroids = vis.svg.append("g").attr("id", "centroids");
     vis.arcs = vis.svg.append("g").attr("id", "arcs");
 
