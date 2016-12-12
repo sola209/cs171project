@@ -219,7 +219,7 @@ FlowMap.prototype.updateVis = function(){
                 .attr("markerWidth", 4*6)
                 .attr("markerHeight", 3*6)
                 .append("polyline")
-                .attr("points", "-2,0 12,5 -2,10 0,5")
+                .attr("points", "0,0 14,5 0,10 3,5")
                 .attr("fill", '#982a23')
                 .attr("opacity", 0.95)
             //.attr("fill", '#919191')
@@ -249,13 +249,13 @@ FlowMap.prototype.updateVis = function(){
                 .attr("stop-color", minColor)
                 .attr("stop-opacity", .0);
     gradient.append("svg:stop")
-                .attr("offset", "95%")
+                .attr("offset", "80%")
                 .attr("stop-color", strokeFun)
                 .attr("stop-opacity", 1.0);
     gradient.append("svg:stop")
-                .attr("offset", "98%")
-                .attr("stop-color", "null")
-                .attr("stop-opacity", 0);
+                .attr("offset", "100%")
+                .attr("stop-color", strokeFun)
+                .attr("stop-opacity", 1.0);
 
     gradientSelection.exit().remove();
 
