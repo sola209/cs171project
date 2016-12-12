@@ -145,7 +145,7 @@ FlowMap.prototype.updateVis = function(){
                     // console.log(vis.selection);
                 var o = nodeDataByCode[flow.Origin], co = o.coords, po = o.projection;
                 var d = nodeDataByCode[flow.Dest], cd = d.coords, pd = d.projection;
-                var magnitude = 4;
+                var magnitude = 3.75;
                 //var magnitude = parseFloat(flow[year]);
                 if (co && cd && !isNaN(magnitude)) {
                     links.push({
@@ -218,7 +218,7 @@ FlowMap.prototype.updateVis = function(){
                 .attr("markerWidth", 4*6)
                 .attr("markerHeight", 3*6)
                 .append("polyline")
-                .attr("points", "2,0 15,5 2,10 3,5")
+                .attr("points", "-2,0 12,5 -2,10 0,5")
                 .attr("fill", '#982a23')
                 .attr("opacity", 0.95)
             //.attr("fill", '#919191')
@@ -248,13 +248,13 @@ FlowMap.prototype.updateVis = function(){
                 .attr("stop-color", minColor)
                 .attr("stop-opacity", .0);
     gradient.append("svg:stop")
-                .attr("offset", "80%")
+                .attr("offset", "95%")
                 .attr("stop-color", strokeFun)
                 .attr("stop-opacity", 1.0);
     gradient.append("svg:stop")
-                .attr("offset", "100%")
-                .attr("stop-color", strokeFun)
-                .attr("stop-opacity", 1.0);
+                .attr("offset", "98%")
+                .attr("stop-color", "null")
+                .attr("stop-opacity", 0);
 
     gradientSelection.exit().remove();
 
