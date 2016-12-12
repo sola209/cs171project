@@ -65,6 +65,11 @@
     height: 150px;
 }
 
+#loading-text {
+    margin-left:-25%;
+    width:100%;
+}
+
 #loading-text b {
     color: #982a23;
 }

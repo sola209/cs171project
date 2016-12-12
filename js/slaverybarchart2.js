@@ -11,7 +11,7 @@ SlaveryBarChart.prototype.initVis = function(){
 	// vis.selectOption = document.getElementById("barchart-selector").value;
 
 	// console.log(vis.data);
-	vis.margin = {top: 10, right: 40, bottom: 40, left: 175};
+	vis.margin = {top: 10, right: 40, bottom: 80, left: 175};
 
 	vis.width = 800 - vis.margin.left - vis.margin.right,
 			vis.height = 500 - vis.margin.top - vis.margin.bottom;
