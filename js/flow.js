@@ -253,7 +253,7 @@ FlowMap.prototype.updateVis = function(){
                 .attr("stop-opacity", 1.0);
     gradient.append("svg:stop")
                 .attr("offset", "98%")
-                .attr("stop-color", "#null")
+                .attr("stop-color", "null")
                 .attr("stop-opacity", 0);
 
     gradientSelection.exit().remove();
