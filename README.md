@@ -11,7 +11,7 @@ The <js> folder contains the javascript files that support our 5 primary visuali
 * A bubble chart outlining the basic forms of human trafficking
 * A flow chart displaying trafficking flows for five countries of interest
 * A chord diagram and associated data pane displaying regional trafficking flow data
-* An interactive slider that demonstrates countries that support a proportion of its trafficked population to exit slavery
+* An interactive slider that displays countries that support a proportion of its trafficked population to exit slavery
 * A globe that cycles through stories of trafficking victims
 
 The <strong>img, css, and fonts</strong> folders contain supporting visual elements for our site.
