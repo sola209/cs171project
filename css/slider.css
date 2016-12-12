@@ -78,11 +78,18 @@ input[type=range]:focus::-webkit-slider-thumb {
 input[type=range]:focus::-moz-range-thumb {
 	background: #666;
 }
+/* Laura's additions */
 
+#slavery-barchart {
+	margin-top: 30px;
+}
 #slider-info {
-	padding-top: 30px;
-	padding-right: 80px;
+	padding-top: 60px;
+	padding-right: 10%;
 	font-size:18px;
+}
+#bar-leftcol{
+	margin-top: 60px;
 }
 
 #slider-legend{
@@ -98,4 +105,9 @@ input[type=range]:focus::-moz-range-thumb {
 	color: #762a23;
 	text-align: center;
 	font-size: 28px;
+}
+#section4-title h1 {
+	text-align: left;
+	margin-top: 50px;
+	margin-bottom: 30px;
 }
