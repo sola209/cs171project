@@ -1,4 +1,5 @@
 
+// Note: code was adapted from http://bl.ocks.org/ilyabo/2209220
 
 
 FlowMap = function(_parentElement, _data){

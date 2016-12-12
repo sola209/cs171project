@@ -1,3 +1,4 @@
+// Note: code was adapted from https://github.com/nbremer/occupations
 
 var diameter,
 	IDbyName = {},
