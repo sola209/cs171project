@@ -98,14 +98,14 @@ function initChord(){
         .attr("d", path);
 
     // Add an elaborate mouseover title for each chord.
-    chord.append("title").text(function(d) {
-        return regions[d.source.index]
-            + " → " + regions[d.target.index]
-            + ": " + formatPercent(d.source.value)
-            + "\n" + regions[d.target.index]
-            + " → " + regions[d.source.index]
-            + ": " + formatPercent(d.target.value);
-    });
+    //chord.append("title").text(function(d) {
+    //    return regions[d.source.index]
+    //        + " → " + regions[d.target.index]
+    //        + ": " + formatPercent(d.source.value)
+    //        + "\n" + regions[d.target.index]
+    //        + " → " + regions[d.source.index]
+    //        + ": " + formatPercent(d.target.value);
+    //});
 
     function mouseover(d, i) {
         chord.classed("fade", function(p) {
