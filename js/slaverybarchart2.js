@@ -168,7 +168,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("width", function(d) { ;
 			return vis.x(d.EXIT_SLAVERY * d.EST_POP_SLAVERY / 100) })
 		.attr("height", vis.y.rangeBand())
-		.attr("fill", "#b8142f")
+		.attr("fill", "#762a23")
 		.attr("class", "enter");
   //       .on('mouseover', function(d) {
   //       	d3.select(this).style("stroke", "#e74c3c").style("stroke-width", "2");
@@ -204,7 +204,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("width", function(d) { 
 			return vis.x((1 - (d.EXIT_SLAVERY/100)) * d.EST_POP_SLAVERY ) } )
 		.attr("height", vis.y.rangeBand())
-		.attr("fill", "#b8142f" )
+		.attr("fill", "#762a23" )
 		.attr("class", "exit");
   //       .on('mouseover', function(d) {
   //       	d3.select(this).style("stroke", "#e74c3c").style("stroke-width", "2");
@@ -226,7 +226,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("width", function(d) { 
 			return vis.x((1 - (d.EXIT_SLAVERY/100)) * d.EST_POP_SLAVERY ) } )
 		.attr("height", vis.y.rangeBand())
-		.attr("fill", "#b8142f" );
+		.attr("fill", "#762a23" );
 
 	vis.bar2.exit().remove();
 	// console.log("End of update", vis.displayData);
