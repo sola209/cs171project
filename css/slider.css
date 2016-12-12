@@ -86,7 +86,7 @@ input[type=range]:focus::-moz-range-thumb {
 #slider-info {
 	padding-top: 30px;
 	padding-right: 80px;
-	font-size:20px;
+	font-size:18px;
 }
 
 #slider-legend{
