@@ -1,6 +1,7 @@
 div#comparison { 
 	display: block;
 	margin: auto;
+	margin-top: 50px;
 	width: 100%;
 	width: 70vw;
 	height: 70vw;
@@ -83,7 +84,7 @@ input[type=range]:focus::-moz-range-thumb {
 }
 
 #slider-info {
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-right: 50px;
 	font-size:20px;
 }
