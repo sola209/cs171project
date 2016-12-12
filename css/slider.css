@@ -3,14 +3,14 @@ div#comparison {
 	margin: auto;
 	margin-top: 50px;
 	width: 100%;
-	width: 60vw;
-	height: 60vw;
-	max-width: 600px;
-	max-height: 80px;
+	width: 683px;
+	height: 100px;
+	max-width: 683px;
+	max-height: 100px;
 	/*overflow: hidden; */
 }
 div#comparison figure { 
-	background-image: url('../img/red.png');
+	background-image: url('../img/women-red.png');
 	background-size: cover;
 	font-size: 0;
 	width: 100%;
@@ -22,7 +22,7 @@ div#comparison figure > img {
 	width: 100%;
 }
 div#comparison figure div { 
-	background-image: url('../img/black.png');
+	background-image: url('../img/women-black.png');
 	background-size: cover;
 	/*position: absolute;*/
 	width: 50%; 
@@ -36,7 +36,7 @@ input[type=range]{
 	-webkit-appearance:none;
 	-moz-appearance:none;
 	position: relative;
-	top: -9rem; left: 0%;
+	top: -11rem; left: 0%;
 	background-color: rgba(63,63,63,0.1);
 	width: 100%; 
 }
@@ -61,14 +61,14 @@ input[type=range]::active {
 input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance:none;
 	width: 5px;
-	height: 100px;
+	height: 120px;
 	background: #666;
 	border-radius: 0 0 0 0;
 }
 input[type=range]::-moz-range-thumb {
 	-moz-appearance: none;
 	width: 5px;
-	height: 100px;
+	height: 120px;
 	background: #666;
 	border-radius: 0 0 0 0;
 }   

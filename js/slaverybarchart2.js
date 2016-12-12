@@ -118,7 +118,10 @@ SlaveryBarChart.prototype.updateVis = function(){
 	d3.select("#enslaved-pop").html(enslaved + " people");
 	d3.select("#country-count").html(vis.displayData.length + " out of " + vis.data.length + " countries");
 
-	vis.displayData = vis.displayData.slice(1,10);
+	if(vis.displayData.length < 2) {
+		console.log(vis.displayData);
+	}
+	vis.displayData = vis.displayData.slice(0,10);
 
 	// console.log(vis);
 	// console.log("Top update", vis.displayData);
@@ -162,7 +165,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 
 
 	// Draw rectangles
-	vis.bar1 = vis.svg.selectAll(".enter")
+	vis.bar1 = vis.svg.selectAll(".exit")
 		.data(vis.displayData);
 
 	vis.bar1.enter().append("rect")
@@ -172,8 +175,8 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("width", function(d) { ;
 			return vis.x(d.EXIT_SLAVERY * d.EST_POP_SLAVERY / 100) })
 		.attr("height", vis.y.rangeBand())
-		.attr("fill", "#762a23")
-		.attr("class", "enter");
+		.attr("fill", "black")
+		.attr("class", "exit");
   //       .on('mouseover', function(d) {
   //       	d3.select(this).style("stroke", "#e74c3c").style("stroke-width", "2");
   //       })
@@ -192,12 +195,11 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("y", function(d) { return vis.y(d.Country); })
 		.attr("width", function(d) { ;
 			return vis.x(d.EXIT_SLAVERY * d.EST_POP_SLAVERY / 100) })
-		.attr("height", vis.y.rangeBand())
-		.attr("fill", "black");
+		.attr("height", vis.y.rangeBand());
 
 	vis.bar1.exit().remove();
 
-	vis.bar2 = vis.svg.selectAll(".exit")
+	vis.bar2 = vis.svg.selectAll(".enter")
 		.data(vis.displayData);
 
 	vis.bar2.enter().append("rect")
@@ -209,7 +211,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 			return vis.x((1 - (d.EXIT_SLAVERY/100)) * d.EST_POP_SLAVERY ) } )
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "#762a23" )
-		.attr("class", "exit");
+		.attr("class", "enter");
   //       .on('mouseover', function(d) {
   //       	d3.select(this).style("stroke", "#e74c3c").style("stroke-width", "2");
   //       })
@@ -229,8 +231,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 		.attr("y", function(d) { return vis.y(d.Country); })
 		.attr("width", function(d) { 
 			return vis.x((1 - (d.EXIT_SLAVERY/100)) * d.EST_POP_SLAVERY ) } )
-		.attr("height", vis.y.rangeBand())
-		.attr("fill", "#762a23" );
+		.attr("height", vis.y.rangeBand());
 
 	vis.bar2.exit().remove();
 	// console.log("End of update", vis.displayData);
