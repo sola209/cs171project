@@ -140,7 +140,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 	// 	return d.EST_POP_SLAVERY*d[vis.displayVariable]/100;
 	// });
 
-	vis.x.domain([0, 4000000]);
+	vis.x.domain([0, 20000000]);
 	vis.y.domain(vis.displayData.map(function(d) {return d.Country; }))
 
 	// Call the axes
