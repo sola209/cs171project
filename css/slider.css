@@ -85,12 +85,12 @@ input[type=range]:focus::-moz-range-thumb {
 
 #slider-info {
 	padding-top: 30px;
-	padding-right: 50px;
+	padding-right: 80px;
 	font-size:20px;
 }
 
 #slider-legend{
-	background-color: #4c4c4c;
+	background-color: #535353;
 	padding: 20px 20px 20px 20px;
 }
 #percent-text {
