@@ -198,6 +198,7 @@ a:hover {
 .firstCircleTitle {
     text-anchor: middle;
     fill: #762a23;
+    font-weight:500;
 
 }
 
