@@ -15,7 +15,9 @@
 }
 a,
 a:hover {
-    color: #ae9a9e;
+    /*color: #ae9a9e;*/
+    color: rgba(174, 128, 119, 0.87)
+    /*color: #762a23*/
 }
 
 .title {
@@ -193,6 +195,11 @@ a:hover {
 .innerCircleTitle {
     text-anchor: middle;
 }
+.firstCircleTitle {
+    text-anchor: middle;
+    fill: #762a23;
+
+}
 
 .subTotal {
     font-weight: 100;
@@ -206,4 +213,6 @@ a:hover {
 
 .innerValue {
     /*font-weight: 700;*/
+}
+#nodeCircle.node {
 }
