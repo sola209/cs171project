@@ -112,7 +112,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 
 	d3.select("#exit-pop").html(exit);
 	d3.select("#enslaved-pop").html(enslaved + " people");
-	d3.select("#countries").html(vis.displayData.length + " among " + vis.data.length + " countries");
+	d3.select("#countries").html(vis.displayData.length + " out of " + vis.data.length + " countries");
 
 	vis.displayData = vis.displayData.slice(1,10);
 
