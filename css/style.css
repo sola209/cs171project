@@ -127,6 +127,11 @@ body {
     text-align: center;
 }
 
+#RussiaImageSource{
+    text-align: center;
+    font-size:10px;
+}
+
 
 h1 {
   font-weight: 100;
