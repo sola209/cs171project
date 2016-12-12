@@ -84,12 +84,12 @@ input[type=range]:focus::-moz-range-thumb {
 	margin-top: 30px;
 }
 #slider-info {
-	padding-top: 60px;
+	padding-top: 65px;
 	padding-right: 10%;
 	font-size:18px;
 }
 #bar-leftcol{
-	margin-top: 60px;
+	margin-top: 65px;
 }
 
 #slider-legend{
@@ -109,5 +109,5 @@ input[type=range]:focus::-moz-range-thumb {
 #section4-title h1 {
 	text-align: left;
 	margin-top: 50px;
-	margin-bottom: 30px;
+	margin-bottom: 34px;
 }
