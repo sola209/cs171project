@@ -243,31 +243,39 @@
 
   <div class="section" id="section4">
     <div id="section4-title"><h1>How Severe is the Problem?</h1></div>
-      <div id="comparison">
-        <figure>
-          <div id="divisor"></div>
-        </figure>
-        <input type="range" min="0" max="100" value="50" id="slider" oninput="moveDivisor()">
-      </div>
-      <div id="slavery-barchart" class="col-md-8"></div> 
-      <div id="slider-info" class="col-md-4">
-        <p style="text-align:left; font-size: 14px;">Of the millions entrapped in forced servitude, only some are supported to exit slavery. Adjust the slider above to display countries with the corresponding proportion of slaves who are supported to exit slavery (sorted by estimated enslaved population).</p>
-        </br>
-        <div id="slider-legend">
-          <p>Depicting countries in which </p>
-          <p>
-            <span id="percent">50%</span>
-            <span id = "percent-text">or more are supported to exit slavery.</span>
+      
+      <div class="row">
 
-          </p>
+        <div class="col-md-7" id="bar-leftcol">
+          <div id="comparison">
+            <figure>
+              <div id="divisor"></div>
+            </figure>
+            <input type="range" min="0" max="100" value="50" id="slider" oninput="moveDivisor()">
+          </div>
 
-          <label id="exit-pop"></label> out of <label id="enslaved-pop"></label>
-          <p id="countries"></p>
+          <div id="slavery-barchart" class="col-md-8"></div> 
+        </div>
 
+
+        <div id="slider-info" class="col-md-5">
+          <p style="text-align:left; font-size: 14px;">Of the millions entrapped in forced servitude, only some are supported to exit slavery. Adjust the slider above to display countries with the corresponding proportion of slaves who are supported to exit slavery (sorted by estimated enslaved population).</p>
+          </br>
+          <div id="slider-legend">
+            <p>Depicting countries in which </p>
+            <p>
+              <span id="percent">50%</span>
+              <span id = "percent-text">or more are supported to exit slavery.</span>
+
+            </p>
+
+            <label id="exit-pop"></label> out of <label id="enslaved-pop"></label>
+            <p id="country-count"></p>
+
+          </div>
         </div>
 
       </div>
-
 <!--       <div id="barchart-text" class="col-md-3">
         <h3>Of the <b>millions</b> in slavery, how many</h3>
         <select id="barchart-selector" onchange="updateBar()">

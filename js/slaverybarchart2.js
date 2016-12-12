@@ -11,7 +11,7 @@ SlaveryBarChart.prototype.initVis = function(){
 	// vis.selectOption = document.getElementById("barchart-selector").value;
 
 	// console.log(vis.data);
-	vis.margin = {top: 10, right: 40, bottom: 40, left: 60};
+	vis.margin = {top: 10, right: 40, bottom: 40, left: 175};
 
 	vis.width = 800 - vis.margin.left - vis.margin.right,
 			vis.height = 500 - vis.margin.top - vis.margin.bottom;
@@ -65,6 +65,10 @@ SlaveryBarChart.prototype.initVis = function(){
 		d.EST_POP_SLAVERY = parseInt(d.EST_POP_SLAVERY.replace(/,/g, ''));
 		d.EXIT_SLAVERY = parseInt(d.EXIT_SLAVERY.replace(/,/g, ''));
 		d.JUSTICE = +d.JUSTICE
+
+		if (d.Country == "Democratic Republic of the Congo") {
+			d.Country = "DRC";
+		}
 	});
 
 	vis.data = vis.data.filter(function(d) {
@@ -112,7 +116,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 
 	d3.select("#exit-pop").html(exit);
 	d3.select("#enslaved-pop").html(enslaved + " people");
-	d3.select("#countries").html(vis.displayData.length + " among " + vis.data.length + " countries");
+	d3.select("#country-count").html(vis.displayData.length + " among " + vis.data.length + " countries");
 
 	vis.displayData = vis.displayData.slice(1,10);
 
@@ -151,7 +155,7 @@ SlaveryBarChart.prototype.updateVis = function(){
 
 	// Move the y axis labels over to the right
 	vis.svg.selectAll(".y-axis text")
-		.attr("x", vis.width-30);
+		.attr("x", -15);
 	
 	// console.log("Mid update", vis.displayData);
 
