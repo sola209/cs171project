@@ -47,13 +47,13 @@ SlaveryBarChart.prototype.initVis = function(){
 	  .attr('class', 'd3-tip')
 	  .offset([-10, 0])
 	  .html(function(d) {
-	    return "<span style='padding: 12px; background: rgba(0, 0, 0, 0.5);'><strong>Not supported to exit: </strong><span style='color:red'>" + parseInt((1-(d.EXIT_SLAVERY / 100)) * d.EST_POP_SLAVERY) + "</span></span>";
+	    return "<span style='padding: 12px; background: rgba(0, 0, 0, 0.5);'><strong>Not supported to exit: </strong><span style='color:#762a23'>" + parseInt((1-(d.EXIT_SLAVERY / 100)) * d.EST_POP_SLAVERY) + "</span></span>";
 	});
 	vis.tip2 = d3.tip()
 	  .attr('class', 'd3-tip')
 	  .offset([-10, 0])
 	  .html(function(d) {
-	    return "<span style='padding: 12px; background: rgba(0, 0, 0, 0.5);'><strong>Supported to exit: </strong><span style='color:red'>" + parseInt(d.EST_POP_SLAVERY * d.EXIT_SLAVERY / 100) + "</span></span>";
+	    return "<span style='padding: 12px; background: rgba(0, 0, 0, 0.5);'><strong>Supported to exit: </strong><span style='color:#762a23'>" + parseInt(d.EST_POP_SLAVERY * d.EXIT_SLAVERY / 100) + "</span></span>";
 	});	  
 
 	vis.svg.call(vis.tip1);
