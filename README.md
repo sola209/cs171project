@@ -2,7 +2,11 @@
 
 Our project is entitled "The Invisible Crime: An interactive exploration into the world of human trafficking," and involves a series of interactive visualizations pertaining to the global crisis of human trafficking.
 
-Our project is published at <strong>sola209.github.io/cs171project</strong>.
+Our website is published at <strong>sola209.github.io/cs171project</strong>
+
+Our screencast is available at <strong>sola209.github.io/cs171project/screencast.html</strong>
+
+Our process book is available at <strong>sola209.github.io/cs171project/blog.html</strong>
 
 The folders and files contained within this repository fall under broad categories of implementation and HTML templates.
 
