@@ -43,6 +43,22 @@ SlaveryBarChart.prototype.initVis = function(){
 	vis.svg.append("g")
 			.attr("class", "y-axis axis");
 
+	vis.tip1 = d3.tip()
+	  .attr('class', 'd3-tip')
+	  .offset([-10, 0])
+	  .html(function(d) {
+	    return "<span style='padding: 12px; background: rgba(0, 0, 0, 0.5);'><strong>Not supported to exit: </strong><span style='color:red'>" + parseInt((1-(d.EXIT_SLAVERY / 100)) * d.EST_POP_SLAVERY) + "</span></span>";
+	});
+	vis.tip2 = d3.tip()
+	  .attr('class', 'd3-tip')
+	  .offset([-10, 0])
+	  .html(function(d) {
+	    return "<span style='padding: 12px; background: rgba(0, 0, 0, 0.5);'><strong>Supported to exit: </strong><span style='color:red'>" + parseInt(d.EST_POP_SLAVERY * d.EXIT_SLAVERY / 100) + "</span></span>";
+	});	  
+
+	vis.svg.call(vis.tip1);
+	vis.svg.call(vis.tip2);
+
 	// // Add x-axis labels
 	// vis.svg.append("text")
 	//     .attr("x", vis.width / 4 )
@@ -176,7 +192,9 @@ SlaveryBarChart.prototype.updateVis = function(){
 			return vis.x(d.EXIT_SLAVERY * d.EST_POP_SLAVERY / 100) })
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "black")
-		.attr("class", "exit");
+		.attr("class", "exit")
+		.on('mouseover', vis.tip2.show)
+      	.on('mouseout', vis.tip2.hide);
   //       .on('mouseover', function(d) {
   //       	d3.select(this).style("stroke", "#e74c3c").style("stroke-width", "2");
   //       })
@@ -211,7 +229,9 @@ SlaveryBarChart.prototype.updateVis = function(){
 			return vis.x((1 - (d.EXIT_SLAVERY/100)) * d.EST_POP_SLAVERY ) } )
 		.attr("height", vis.y.rangeBand())
 		.attr("fill", "#762a23" )
-		.attr("class", "enter");
+		.attr("class", "enter")
+		.on('mouseover', vis.tip1.show)
+      	.on('mouseout', vis.tip1.hide);
   //       .on('mouseover', function(d) {
   //       	d3.select(this).style("stroke", "#e74c3c").style("stroke-width", "2");
   //       })
